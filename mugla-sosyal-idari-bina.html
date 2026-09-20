@@ -21,9 +21,15 @@
     </header>
 
     <main class="bg-black">
+        
+        <!-- Sayfaya Girer Girmez Tüm Ekranı Kaplayan Kapak Render'ı -->
+        <div class="project-hero-cover">
+            <img src="projects/mugla/cover.jpg" alt="Muğla Sosyal ve İdari Hizmetler Binası - Main Cover">
+        </div>
+
         <div class="project-detail-container">
             
-            <!-- Tablo Düzeninde 2 Sütunlu Künye -->
+            <!-- Tablo Düzeninde Künye -->
             <div class="project-header-grid">
                 
                 <!-- Sol Sütun: Başlık, Etiketler, Ekip -->
@@ -49,7 +55,7 @@
                     </div>
                 </div>
 
-                <!-- Sağ Sütun: Detay Tablosu (Key - Value) -->
+                <!-- Sağ Sütun: Detay Tablosu -->
                 <div class="project-specs-table">
                     <div class="spec-row">
                         <span class="spec-label">DATE</span>
@@ -88,34 +94,53 @@
                             Kentsel omurga boyunca uzanan sirkülasyon aksları, kamusal meydan ve avlu yaşantısını yapının iç mekanlarına doğru kesintisiz bir biçimde taşır. İdari birimler rasyonel ve esnek çalışma alanları sunarken, sosyal ve kültürel mekanlar kentsel etkileşimi artıran geçirgen çeperlerle çevrelenmiştir.
                         </p>
                     </div>
-                    <!-- Genişletme / Daraltma Butonu (+ / −) -->
                     <button class="intro-toggle-btn" onclick="toggleIntro()" id="introBtn">+</button>
                 </div>
             </div>
 
-            <!-- DİKEY VE KONTROLLÜ GÖRSEL AKIŞI (1'den 20'ye Sırayla) -->
-            <div class="project-images-stack">
-                <img src="projects/mugla/cover.jpg" onerror="this.style.display='none'" alt="Muğla Cover">
-                <img src="projects/mugla/1.jpg" onerror="this.style.display='none'" alt="Görsel 1">
-                <img src="projects/mugla/2.jpg" onerror="this.style.display='none'" alt="Görsel 2">
-                <img src="projects/mugla/3.jpg" onerror="this.style.display='none'" alt="Görsel 3">
-                <img src="projects/mugla/4.jpg" onerror="this.style.display='none'" alt="Görsel 4">
-                <img src="projects/mugla/5.jpg" onerror="this.style.display='none'" alt="Görsel 5">
-                <img src="projects/mugla/6.jpg" onerror="this.style.display='none'" alt="Görsel 6">
-                <img src="projects/mugla/7.jpg" onerror="this.style.display='none'" alt="Görsel 7">
-                <img src="projects/mugla/8.jpg" onerror="this.style.display='none'" alt="Görsel 8">
-                <img src="projects/mugla/9.jpg" onerror="this.style.display='none'" alt="Görsel 9">
-                <img src="projects/mugla/10.jpg" onerror="this.style.display='none'" alt="Görsel 10">
-                <img src="projects/mugla/11.jpg" onerror="this.style.display='none'" alt="Görsel 11">
-                <img src="projects/mugla/12.jpg" onerror="this.style.display='none'" alt="Görsel 12">
-                <img src="projects/mugla/13.jpg" onerror="this.style.display='none'" alt="Görsel 13">
-                <img src="projects/mugla/14.jpg" onerror="this.style.display='none'" alt="Görsel 14">
-                <img src="projects/mugla/15.jpg" onerror="this.style.display='none'" alt="Görsel 15">
-                <img src="projects/mugla/16.jpg" onerror="this.style.display='none'" alt="Görsel 16">
-                <img src="projects/mugla/17.jpg" onerror="this.style.display='none'" alt="Görsel 17">
-                <img src="projects/mugla/18.jpg" onerror="this.style.display='none'" alt="Görsel 18">
-                <img src="projects/mugla/19.jpg" onerror="this.style.display='none'" alt="Görsel 19">
-                <img src="projects/mugla/20.jpg" onerror="this.style.display='none'" alt="Görsel 20">
+            <!-- KATEGORİ 1: RENDERS -->
+            <div class="gallery-category-section">
+                <div class="category-header">
+                    <div class="category-title">01 // RENDERS</div>
+                    <div class="slider-controls">
+                        <span class="slider-counter" id="renders-counter">1 / 5</span>
+                        <button class="slider-btn" onclick="changeSlide('renders', -1)">&#10094;</button>
+                        <button class="slider-btn" onclick="changeSlide('renders', 1)">&#10095;</button>
+                    </div>
+                </div>
+                <div class="slider-display">
+                    <img id="renders-img" src="projects/mugla/cover.jpg" alt="Render Image">
+                </div>
+            </div>
+
+            <!-- KATEGORİ 2: DIAGRAMS -->
+            <div class="gallery-category-section">
+                <div class="category-header">
+                    <div class="category-title">02 // DIAGRAMS</div>
+                    <div class="slider-controls">
+                        <span class="slider-counter" id="diagrams-counter">1 / 5</span>
+                        <button class="slider-btn" onclick="changeSlide('diagrams', -1)">&#10094;</button>
+                        <button class="slider-btn" onclick="changeSlide('diagrams', 1)">&#10095;</button>
+                    </div>
+                </div>
+                <div class="slider-display">
+                    <img id="diagrams-img" src="projects/mugla/6.jpg" alt="Diagram Image">
+                </div>
+            </div>
+
+            <!-- KATEGORİ 3: TECHNICAL DRAWINGS -->
+            <div class="gallery-category-section">
+                <div class="category-header">
+                    <div class="category-title">03 // TECHNICAL DRAWINGS</div>
+                    <div class="slider-controls">
+                        <span class="slider-counter" id="drawings-counter">1 / 5</span>
+                        <button class="slider-btn" onclick="changeSlide('drawings', -1)">&#10094;</button>
+                        <button class="slider-btn" onclick="changeSlide('drawings', 1)">&#10095;</button>
+                    </div>
+                </div>
+                <div class="slider-display">
+                    <img id="drawings-img" src="projects/mugla/11.jpg" alt="Technical Drawing Image">
+                </div>
             </div>
 
             <!-- Navigasyon -->
@@ -140,18 +165,63 @@
         </div>
     </footer>
 
-    <!-- Introduction Genişletme Kod Mantığı -->
+    <!-- Slider & Intro Kod Mantığı -->
     <script>
+        // Görsel Yollarının Kategorilere Göre Tanımlanması
+        const sliders = {
+            renders: {
+                images: [
+                    'projects/mugla/cover.jpg',
+                    'projects/mugla/1.jpg',
+                    'projects/mugla/2.jpg',
+                    'projects/mugla/3.jpg',
+                    'projects/mugla/4.jpg',
+                    'projects/mugla/5.jpg'
+                ],
+                index: 0
+            },
+            diagrams: {
+                images: [
+                    'projects/mugla/6.jpg',
+                    'projects/mugla/7.jpg',
+                    'projects/mugla/8.jpg',
+                    'projects/mugla/9.jpg',
+                    'projects/mugla/10.jpg'
+                ],
+                index: 0
+            },
+            drawings: {
+                images: [
+                    'projects/mugla/11.jpg',
+                    'projects/mugla/12.jpg',
+                    'projects/mugla/13.jpg',
+                    'projects/mugla/14.jpg',
+                    'projects/mugla/15.jpg'
+                ],
+                index: 0
+            }
+        };
+
+        function changeSlide(category, direction) {
+            const slider = sliders[category];
+            if (!slider) return;
+
+            slider.index += direction;
+            if (slider.index < 0) slider.index = slider.images.length - 1;
+            if (slider.index >= slider.images.length) slider.index = 0;
+
+            const imgEl = document.getElementById(category + '-img');
+            const counterEl = document.getElementById(category + '-counter');
+
+            if (imgEl) imgEl.src = slider.images[slider.index];
+            if (counterEl) counterEl.innerText = (slider.index + 1) + ' / ' + slider.images.length;
+        }
+
         function toggleIntro() {
             const box = document.getElementById('introBox');
             const btn = document.getElementById('introBtn');
             box.classList.toggle('expanded');
-            
-            if (box.classList.contains('expanded')) {
-                btn.innerText = '−';
-            } else {
-                btn.innerText = '+';
-            }
+            btn.innerText = box.classList.contains('expanded') ? '−' : '+';
         }
     </script>
 
