@@ -288,3 +288,100 @@ textarea {
 .lightbox-close:hover {
     opacity: 1;
 }
+/* --- Proje Detay Sayfası Stilleri --- */
+.project-detail-container {
+    padding: 60px 10%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.project-header {
+    margin-bottom: 60px;
+}
+
+.project-title {
+    font-size: 38px;
+    font-weight: normal;
+    letter-spacing: -0.5px;
+    margin-bottom: 40px;
+    line-height: 1.2;
+}
+
+/* Künye (Metadata) Izgarası */
+.project-meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    border-top: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    padding: 25px 0;
+    margin-bottom: 40px;
+}
+
+.meta-item h4 {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.5;
+    margin-bottom: 6px;
+}
+
+.meta-item p {
+    font-size: 14px;
+    opacity: 0.9;
+    line-height: 1.4;
+}
+
+/* Proje Açıklama Metni */
+.project-description {
+    font-size: 15px;
+    line-height: 1.8;
+    opacity: 0.85;
+    max-width: 900px;
+    margin-bottom: 80px;
+}
+
+/* Dikey Görsel Akışı (Bark Mimarlık Tarzı) */
+.project-gallery-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+.project-gallery-stack img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Alt Sayfa Yönlendirmeleri */
+.project-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 40px;
+    border-top: 1px solid #333333;
+}
+
+.project-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 13px;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.project-nav a:hover {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .project-title {
+        font-size: 28px;
+    }
+    .project-meta-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
