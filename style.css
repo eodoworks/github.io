@@ -601,3 +601,10 @@ textarea {
         font-size: 11px;
     }
 }
+@media (max-width: 768px) {
+    /* Kurucu ortakları (Emre ve Öykü/Zehra) mobilde alt alta dizmek için: */
+    .founders-container {
+        flex-direction: column !important;
+        gap: 50px !important;
+    }
+}
