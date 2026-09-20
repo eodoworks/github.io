@@ -20,49 +20,35 @@
         </nav>
     </header>
 
-    <main class="bg-black" style="padding: 60px 10%; min-height: 70vh;">
+    <main class="bg-black" style="padding: 80px 10%; min-height: 70vh;">
         
-        <!-- Proje Kartları Izgarası -->
         <div class="project-grid">
 
-            <!-- ÖRNEK PROJE 1 -->
-            <div class="project-card" onclick="openGallery('project1')">
+            <!-- PROJE 1: Muğla Sosyal, Kültürel ve İdari Hizmetler Binası -->
+            <a href="mugla-sosyal-idari-bina.html" class="project-card" style="text-decoration: none; color: inherit;">
                 <div class="img-wrapper">
-                    <img src="projects/project1/cover.jpg" alt="Project 1">
+                    <img src="projects/mugla/cover.jpg" alt="Muğla Sosyal, Kültürel ve İdari Hizmetler Binası">
                 </div>
                 <div class="project-info">
-                    <h3>Project Name 01</h3>
-                    <p>Urban Design / Istanbul, 2026</p>
+                    <h3>Muğla Büyükşehir Belediyesi Sosyal, Kültürel ve İdari Hizmetler Binası</h3>
+                    <p>Architectural Competition / Muğla, 2026</p>
                 </div>
-            </div>
+            </a>
 
-            <!-- ÖRNEK PROJE 2 -->
-            <div class="project-card" onclick="openGallery('project2')">
+            <!-- PROJE 2: Bursa Kentsel Tasarım -->
+            <a href="bursa-urban-design.html" class="project-card" style="text-decoration: none; color: inherit;">
                 <div class="img-wrapper">
-                    <img src="projects/project2/cover.jpg" alt="Project 2">
+                    <img src="projects/bursa/cover.jpg" alt="Bursa Setbaşı-Yeşil-Emirsultan Historical Axis">
                 </div>
                 <div class="project-info">
-                    <h3>Project Name 02</h3>
-                    <p>Cultural Center / Paris, 2025</p>
+                    <h3>Bursa Setbaşı-Yeşil-Emirsultan Historical Axis</h3>
+                    <p>Urban Design / Bursa, 2025</p>
                 </div>
-            </div>
+            </a>
 
         </div>
 
     </main>
-
-    <!-- Tam Ekran Görsel İnceleme Modalı (Lightbox) -->
-    <div id="lightbox" class="lightbox">
-        <span class="lightbox-close" onclick="closeGallery()">&times;</span>
-        <button class="lightbox-btn" onclick="changeSlide(-1)">&#10094;</button>
-        
-        <div class="lightbox-content">
-            <img id="lightbox-img" src="" alt="Project Image">
-            <div id="lightbox-caption" class="lightbox-caption"></div>
-        </div>
-
-        <button class="lightbox-btn" onclick="changeSlide(1)">&#10095;</button>
-    </div>
 
     <footer>
         <div class="footer-logo">
@@ -76,78 +62,6 @@
             <a href="mailto:info@eodoworks.com">info@eodoworks.com</a>
         </div>
     </footer>
-
-    <!-- Galeri Mantığı (JavaScript) -->
-    <script>
-        // Projelerin Görsel Listeleri
-        const projectData = {
-            'project1': {
-                title: 'Project Name 01',
-                images: [
-                    'projects/project1/cover.jpg',
-                    'projects/project1/1.jpg',
-                    'projects/project1/2.jpg',
-                    'projects/project1/3.jpg'
-                ]
-            },
-            'project2': {
-                title: 'Project Name 02',
-                images: [
-                    'projects/project2/cover.jpg',
-                    'projects/project2/1.jpg',
-                    'projects/project2/2.jpg'
-                ]
-            }
-        };
-
-        let currentProject = null;
-        let currentIndex = 0;
-
-        function openGallery(projectId) {
-            if (!projectData[projectId]) return;
-            currentProject = projectData[projectId];
-            currentIndex = 0;
-            
-            updateLightbox();
-            document.getElementById('lightbox').classList.add('active');
-        }
-
-        function closeGallery() {
-            document.getElementById('lightbox').classList.remove('active');
-        }
-
-        function changeSlide(direction) {
-            if (!currentProject) return;
-            currentIndex += direction;
-            
-            // Döngüsel geçiş (son görselden sonrakinde başa döner)
-            if (currentIndex < 0) {
-                currentIndex = currentProject.images.length - 1;
-            } else if (currentIndex >= currentProject.images.length) {
-                currentIndex = 0;
-            }
-
-            updateLightbox();
-        }
-
-        function updateLightbox() {
-            const imgElement = document.getElementById('lightbox-img');
-            const captionElement = document.getElementById('lightbox-caption');
-            
-            imgElement.src = currentProject.images[currentIndex];
-            captionElement.innerText = `${currentProject.title} — (${currentIndex + 1} / ${currentProject.images.length})`;
-        }
-
-        // Klavye Yön Tuşları ve ESC Desteği
-        document.addEventListener('keydown', function(event) {
-            const lightbox = document.getElementById('lightbox');
-            if (!lightbox.classList.contains('active')) return;
-
-            if (event.key === 'Escape') closeGallery();
-            if (event.key === 'ArrowLeft') changeSlide(-1);
-            if (event.key === 'ArrowRight') changeSlide(1);
-        });
-    </script>
 
 </body>
 </html>
