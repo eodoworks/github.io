@@ -25,25 +25,31 @@
             
             <!-- Sol Alan (Mobilde Alt Alan): İletişim Formu -->
             <div class="contact-form-wrapper">
-                <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+                <form action="https://formsubmit.co/info@eodoworks.com" method="POST">
+                    
+                    <!-- E-posta Konu Başlığı Ayarı -->
+                    <input type="hidden" name="_subject" value="New Contact Form Submission — eodoworks.com">
+                    <!-- Spam Bot Koruması & Otomatik Yanıt Geçişi -->
+                    <input type="hidden" name="_captcha" value="false">
+
                     <div class="form-row">
                         <div class="form-group">
                             <label>Name</label>
-                            <input type="text" name="first_name" placeholder="First Name (required)" required>
+                            <input type="text" name="First Name" placeholder="First Name (required)" required>
                         </div>
                         <div class="form-group" style="margin-top: 27px;">
-                            <input type="text" name="last_name" placeholder="Last Name (required)" required>
+                            <input type="text" name="Last Name" placeholder="Last Name (required)" required>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label>Email <span style="font-size: 11px; opacity: 0.6;">(required)</span></label>
-                        <input type="email" name="email" required>
+                        <input type="email" name="Email" required>
                     </div>
 
                     <div class="form-group">
                         <label>Message <span style="font-size: 11px; opacity: 0.6;">(required)</span></label>
-                        <textarea name="message" required></textarea>
+                        <textarea name="Message" required></textarea>
                     </div>
 
                     <button type="submit" class="btn-send">SEND</button>
