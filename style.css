@@ -602,7 +602,69 @@ textarea {
     }
 }
 @media (max-width: 768px) {
-    /* Kurucu ortakları (Emre ve Öykü/Zehra) mobilde alt alta dizmek için: */
+    /* Header (Navigasyon): Mobilde logoyu sola, menü linklerini sağa alıp yan yana tutar */
+    header {
+        padding: 15px 20px !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        gap: 0 !important;
+    }
+
+    .nav-logo img {
+        height: 48px !important; /* Mobilde logonun aşırı büyük durmaması için ideal boyut */
+        width: auto !important;
+        margin: 0 !important;
+    }
+
+    nav {
+        display: flex !important;
+        gap: 12px !important;
+    }
+
+    nav a {
+        margin-left: 0 !important;
+        font-size: 12px !important;
+        letter-spacing: 0.2px !important;
+    }
+
+    /* Footer Ayarları */
+    footer {
+        padding: 20px;
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .footer-logo img {
+        margin: 0 auto;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-hero-cover {
+        margin-bottom: 30px !important;
+    }
+
+    .project-detail-container {
+        padding: 30px 5%;
+    }
+
+    .project-left-col h1 {
+        font-size: 22px;
+    }
+
+    .bark-slider-wrapper {
+        height: 380px;
+    }
+
+    .category-header-clean .category-title {
+        font-size: 11px;
+    }
+
+    /* Kurucu Ortakları Mobilde Alt Alta Sıralama */
     .founders-container {
         flex-direction: column !important;
         gap: 50px !important;
