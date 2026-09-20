@@ -310,7 +310,7 @@ textarea {
 }
 
 /* ==========================================================================
-   8. PROJE DETAY SAYFASI (ÜST SİYAH / ALT BEYAZ BÖLÜM)
+   8. PROJE DETAY SAYFASI
    ========================================================================== */
 
 /* KAPAK RENDER'I (TAM EKRAN VE ORİJİNAL KADRAJ) */
@@ -474,7 +474,7 @@ textarea {
     color: #000000;
 }
 
-/* --- BEYAZ ARKA PLANLI GALERİ BÖLÜMÜ (INTRODUCTION'DAN SONRASI) --- */
+/* --- BEYAZ ARKA PLANLI GALERİ BÖLÜMÜ --- */
 .project-galleries-white-section {
     background-color: #ffffff;
     color: #000000;
@@ -484,11 +484,11 @@ textarea {
 }
 
 .gallery-category-section {
-    margin-bottom: 90px;
+    margin-bottom: 80px;
 }
 
 .category-header-clean {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .category-header-clean .category-title {
@@ -499,24 +499,20 @@ textarea {
     font-weight: bold;
 }
 
-/* BÜYÜTÜLMÜŞ GALERİ ÇERÇEVESİ (750PX YÜKSEKLİK) */
+/* SIFIR SAYSAL KAYMA (ZERO LAYOUT SHIFT) - KİLİTLİ 650PX ALAN */
 .bark-slider-wrapper {
     width: 100%;
-    height: 750px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 650px;
+    display: block;
     position: relative;
     overflow: hidden;
     background-color: #ffffff;
 }
 
 .bark-slider-wrapper img {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: contain;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
     cursor: pointer;
     display: block;
     margin: 0 auto;
@@ -596,9 +592,9 @@ textarea {
         font-size: 22px;
     }
 
-    /* Mobilde Büyütülmüş Galeri Yüksekliği */
+    /* Mobilde Kilitli Yükseklik */
     .bark-slider-wrapper {
-        height: 480px;
+        height: 380px;
     }
 
     .category-header-clean .category-title {
