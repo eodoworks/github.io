@@ -26,7 +26,6 @@ header {
     z-index: 100;
 }
 
-/* Sol Üst Logo (2x Boyut) */
 .nav-logo img {
     height: 76px;
     width: auto;
@@ -75,7 +74,6 @@ footer {
     border-top: 1px solid #e0e0e0;
 }
 
-/* Sol Alt Logo (2x Boyut) */
 .footer-logo img {
     height: 56px;
     width: auto;
@@ -104,6 +102,42 @@ footer {
 
 .footer-right a:hover {
     opacity: 0.6;
+}
+
+/* --- About Sayfası Düzenleri --- */
+.about-intro-container {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+    margin-bottom: 120px;
+}
+
+.founders-container {
+    display: flex;
+    gap: 80px;
+}
+
+.founder-card {
+    flex: 1;
+}
+
+/* --- Contact Sayfası Düzenleri --- */
+.contact-container {
+    padding: 90px 10%;
+    min-height: 65vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.contact-form-wrapper {
+    width: 48%;
+}
+
+.contact-logo-wrapper {
+    width: 42%;
+    text-align: right;
+    padding-top: 30px;
 }
 
 /* Works Kart Grid Düzeni */
@@ -142,107 +176,7 @@ footer {
     opacity: 1;
 }
 
-.project-info h3 {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 4px;
-}
-
-.project-info p {
-    font-size: 12px;
-    opacity: 0.6;
-}
-
-/* --- Proje Detay Sayfası Stilleri (Bark Mimarlık Düzeni) --- */
-.project-detail-container {
-    padding: 60px 10%;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.project-header {
-    margin-bottom: 60px;
-}
-
-.project-title {
-    font-size: 38px;
-    font-weight: normal;
-    letter-spacing: -0.5px;
-    margin-bottom: 40px;
-    line-height: 1.2;
-}
-
-/* Künye (Metadata) Izgarası */
-.project-meta-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 30px;
-    border-top: 1px solid #333333;
-    border-bottom: 1px solid #333333;
-    padding: 25px 0;
-    margin-bottom: 40px;
-}
-
-.meta-item h4 {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    opacity: 0.5;
-    margin-bottom: 8px;
-}
-
-.meta-item p {
-    font-size: 14px;
-    opacity: 0.9;
-    line-height: 1.5;
-}
-
-/* Proje Açıklama Metni */
-.project-description {
-    font-size: 15px;
-    line-height: 1.8;
-    opacity: 0.85;
-    max-width: 900px;
-    margin-bottom: 80px;
-}
-
-/* Dikey Görsel Akışı */
-.project-gallery-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    margin-bottom: 80px;
-}
-
-.project-gallery-stack img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-}
-
-/* Alt Sayfa Navigasyonu */
-.project-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 40px;
-    border-top: 1px solid #333333;
-}
-
-.project-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 13px;
-    opacity: 0.7;
-    transition: opacity 0.2s;
-}
-
-.project-nav a:hover {
-    opacity: 1;
-}
-
-/* Form Elemanları (Contact Sayfası) */
+/* Form Elemanları */
 .form-group {
     margin-bottom: 30px;
 }
@@ -295,16 +229,64 @@ textarea {
     background-color: #cccccc;
 }
 
-/* Mobil Uyum (Responsive) */
+/* --- MOBİL UYUM (RESPONSIVE) FİX KODLARI --- */
 @media (max-width: 768px) {
     header, footer {
-        padding: 20px 30px;
+        padding: 20px;
         flex-direction: column;
-        gap: 20px;
+        gap: 15px;
+        text-align: center;
     }
     
+    .nav-logo img, .footer-logo img {
+        margin: 0 auto;
+    }
+
     nav a {
         margin: 0 10px;
+    }
+
+    /* About Mobil Düzenlemesi */
+    .about-intro-container {
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 60px;
+    }
+
+    .about-intro-container > div,
+    .about-intro-container > p {
+        width: 100% !important;
+    }
+
+    .founders-container {
+        flex-direction: column;
+        gap: 60px;
+    }
+
+    .founder-card img {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    /* Contact Mobil Düzenlemesi (Logo Üstte/Ortada, Form Altında) */
+    .contact-container {
+        flex-direction: column-reverse;
+        padding: 40px 20px;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .contact-form-wrapper,
+    .contact-logo-wrapper {
+        width: 100% !important;
+        text-align: center;
+        padding-top: 0;
+    }
+
+    .contact-logo-wrapper img {
+        width: 180px !important;
+        margin: 0 auto 20px auto;
+        display: block;
     }
 
     .form-row {
@@ -312,11 +294,11 @@ textarea {
         gap: 0;
     }
 
-    .project-title {
-        font-size: 28px;
+    .form-group label {
+        text-align: left;
     }
 
-    .project-meta-grid {
-        grid-template-columns: 1fr 1fr;
+    input[type="text"], input[type="email"], textarea {
+        text-align: left;
     }
 }
