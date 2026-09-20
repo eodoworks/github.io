@@ -1,4 +1,4 @@
-/* Futura Font Tanımlaması ve Genel Sıfırlama */
+/* Futura Font Tanımlaması ve Sıfırlama */
 * {
     margin: 0;
     padding: 0;
@@ -63,7 +63,7 @@ main {
     color: #000000;
 }
 
-/* Alt Bilgi / Footer */
+/* Footer */
 footer {
     background-color: #ffffff;
     color: #000000;
@@ -100,136 +100,205 @@ footer {
     transition: opacity 0.2s;
 }
 
-.footer-right a:hover {
-    opacity: 0.6;
+/* --- PROJE DETAY SAYFASI DÜZENLERİ (REFERANS UYUMLU) --- */
+.project-detail-container {
+    padding: 60px 8%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-/* --- About Sayfası Düzenleri --- */
-.about-intro-container {
-    display: flex;
-    gap: 60px;
-    align-items: flex-start;
-    margin-bottom: 120px;
-}
-
-.founders-container {
-    display: flex;
-    gap: 80px;
-}
-
-.founder-card {
-    flex: 1;
-}
-
-/* --- Contact Sayfası Düzenleri --- */
-.contact-container {
-    padding: 90px 10%;
-    min-height: 65vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.contact-form-wrapper {
-    width: 48%;
-}
-
-.contact-logo-wrapper {
-    width: 42%;
-    text-align: right;
-    padding-top: 30px;
-}
-
-/* Works Kart Grid Düzeni */
-.project-grid {
+/* 2 Sütunlu Künye Tablosu */
+.project-header-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: 1.2fr 1fr;
     gap: 40px;
+    border: 1px solid #333333;
+    padding: 40px;
+    margin-bottom: 50px;
+    background-color: #050505;
 }
 
-.project-card {
-    cursor: pointer;
-    overflow: hidden;
-    text-decoration: none;
-    color: inherit;
-    display: block;
+.project-left-col h1 {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.3;
+    margin-bottom: 25px;
+    letter-spacing: -0.5px;
 }
 
-.project-card .img-wrapper {
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    overflow: hidden;
-    background-color: #111111;
-    margin-bottom: 12px;
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 35px;
 }
 
-.project-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease, opacity 0.4s ease;
+.tag-box {
+    border: 1px solid #ffffff;
+    padding: 6px 14px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     opacity: 0.9;
 }
 
-.project-card:hover img {
-    transform: scale(1.03);
+.team-list-section {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #cccccc;
+}
+
+.team-list-section h4 {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #888888;
+    margin-bottom: 6px;
+    margin-top: 20px;
+}
+
+.team-list-section h4:first-child {
+    margin-top: 0;
+}
+
+/* Sağ Sütun Tablo Değerleri */
+.project-specs-table {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    justify-content: center;
+}
+
+.spec-row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    align-items: baseline;
+    border-bottom: 1px solid #1a1a1a;
+    padding-bottom: 10px;
+    font-size: 13px;
+}
+
+.spec-label {
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: #888888;
+}
+
+.spec-value {
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* --- INTRODUCTION (GENİŞLETİLEBİLİR AÇIKLAMA KUTUSU) --- */
+.intro-section {
+    margin-bottom: 60px;
+}
+
+.intro-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #888888;
+    margin-bottom: 12px;
+}
+
+.intro-box {
+    border: 1px solid #333333;
+    padding: 35px;
+    position: relative;
+    background-color: #050505;
+}
+
+.intro-content {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #dddddd;
+    max-height: 120px;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+
+.intro-box.expanded .intro-content {
+    max-height: 3000px;
+}
+
+.intro-toggle-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 34px;
+    height: 34px;
+    border: 1px solid #ffffff;
+    background: #000000;
+    color: #ffffff;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s, color 0.2s;
+}
+
+.intro-toggle-btn:hover {
+    background: #ffffff;
+    color: #000000;
+}
+
+/* --- SIRALI VE KONTROLLÜ DİKEY GÖRSEL AKIŞI --- */
+.project-images-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.project-images-stack img {
+    width: 100%;
+    max-width: 1100px;
+    height: auto;
+    max-height: 85vh;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Alt Navigasyon */
+.project-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 40px;
+    border-top: 1px solid #333333;
+}
+
+.project-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 13px;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.project-nav a:hover {
     opacity: 1;
 }
 
-/* Form Elemanları */
-.form-group {
-    margin-bottom: 30px;
+/* MOBİL UYUM (RESPONSIVE) */
+@media (max-width: 900px) {
+    .project-header-grid {
+        grid-template-columns: 1fr;
+        padding: 25px;
+    }
+
+    .spec-row {
+        grid-template-columns: 130px 1fr;
+    }
 }
 
-.form-group label {
-    display: block;
-    font-size: 14px;
-    margin-bottom: 8px;
-}
-
-.form-row {
-    display: flex;
-    gap: 25px;
-}
-
-.form-row .form-group {
-    flex: 1;
-}
-
-input[type="text"], input[type="email"], textarea {
-    width: 100%;
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid #ffffff;
-    color: #ffffff;
-    padding: 12px 0;
-    font-size: 14px;
-    outline: none;
-}
-
-textarea {
-    resize: vertical;
-    min-height: 100px;
-}
-
-.btn-send {
-    background-color: #ffffff;
-    color: #000000;
-    border: none;
-    padding: 12px 35px;
-    border-radius: 25px;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 12px;
-    letter-spacing: 1.5px;
-    transition: background-color 0.2s, color 0.2s;
-}
-
-.btn-send:hover {
-    background-color: #cccccc;
-}
-
-/* --- MOBİL UYUM (RESPONSIVE) FİX KODLARI --- */
 @media (max-width: 768px) {
     header, footer {
         padding: 20px;
@@ -237,161 +306,12 @@ textarea {
         gap: 15px;
         text-align: center;
     }
-    
-    .nav-logo img, .footer-logo img {
-        margin: 0 auto;
+
+    .project-detail-container {
+        padding: 30px 5%;
     }
 
-    nav a {
-        margin: 0 10px;
-    }
-
-    /* About Mobil Düzenlemesi */
-    .about-intro-container {
-        flex-direction: column;
-        gap: 30px;
-        margin-bottom: 60px;
-    }
-
-    .about-intro-container > div,
-    .about-intro-container > p {
-        width: 100% !important;
-    }
-
-    .founders-container {
-        flex-direction: column;
-        gap: 60px;
-    }
-
-    .founder-card img {
-        width: 100% !important;
-        height: auto !important;
-    }
-
-    /* Contact Mobil Düzenlemesi (Logo Üstte/Ortada, Form Altında) */
-    .contact-container {
-        flex-direction: column-reverse;
-        padding: 40px 20px;
-        gap: 40px;
-        align-items: center;
-    }
-
-    .contact-form-wrapper,
-    .contact-logo-wrapper {
-        width: 100% !important;
-        text-align: center;
-        padding-top: 0;
-    }
-
-    .contact-logo-wrapper img {
-        width: 180px !important;
-        margin: 0 auto 20px auto;
-        display: block;
-    }
-
-    .form-row {
-        flex-direction: column;
-        gap: 0;
-    }
-
-    .form-group label {
-        text-align: left;
-    }
-
-    input[type="text"], input[type="email"], textarea {
-        text-align: left;
-    }
-}
-/* Home Sayfası Orta Logo Animasyonu (Pop / Bounce Effect) */
-.home-hero-logo {
-    width: 380px;
-    max-width: 85%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    animation: logoPop 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-    transform-origin: center center;
-}
-
-@keyframes logoPop {
-    0% {
-        transform: scale(0.05);
-        opacity: 0;
-    }
-    70% {
-        transform: scale(1.12);
-        opacity: 1;
-    }
-    85% {
-        transform: scale(0.95);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-/* Ana Sayfa Alt Başlık Stili ve Belirme Animasyonu */
-.home-hero-subtitle {
-    font-size: 14px;
-    letter-spacing: 1.5px;
-    opacity: 0.8;
-    margin-top: 20px;
-    color: #ffffff;
-    animation: fadeInSubtitle 1.4s ease forwards;
-}
-
-@keyframes fadeInSubtitle {
-    0% {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    60% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 0.8;
-        transform: translateY(0);
-    }
-}
-/* --- 20+ Görselli Galeri Düzenlemeleri --- */
-.project-gallery-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    margin-bottom: 80px;
-}
-
-/* Tekli / Tam Genişlik Görseller (Görselin ekranı aşırı kaplamasını önler) */
-.project-gallery-stack > img {
-    width: 100%;
-    height: auto;
-    max-height: 85vh; /* Ekran yüksekliğinin %85'ini geçmez */
-    object-fit: contain;
-    display: block;
-    margin: 0 auto;
-}
-
-/* 2'li Yan Yana Görsel Izgarası (Diyagramlar, Detaylar ve İç Mekanlar İçin) */
-.img-grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    width: 100%;
-}
-
-.img-grid-2 img {
-    width: 100%;
-    height: 100%;
-    max-height: 550px;
-    object-fit: cover;
-    display: block;
-}
-
-/* Mobilde 2'li görseller dikey sıraya geçer */
-@media (max-width: 768px) {
-    .img-grid-2 {
-        grid-template-columns: 1fr;
-        gap: 15px;
+    .project-left-col h1 {
+        font-size: 22px;
     }
 }
