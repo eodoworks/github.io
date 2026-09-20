@@ -310,10 +310,10 @@ textarea {
 }
 
 /* ==========================================================================
-   8. PROJE DETAY SAYFASI
+   8. PROJE DETAY SAYFASI (ÜST SİYAH / ALT BEYAZ BÖLÜM)
    ========================================================================== */
 
-/* SAĞA VE SOLA SIFIRLANMIŞ, KIRPMASIZ VE ORİJİNAL ORANLI KAPAK RENDER'I */
+/* KAPAK RENDER'I (TAM EKRAN VE ORİJİNAL KADRAJ) */
 .project-hero-cover {
     width: 100% !important;
     height: auto !important;
@@ -420,7 +420,7 @@ textarea {
 
 /* Introduction Rapor Kutusu */
 .intro-section {
-    margin-bottom: 70px;
+    margin-bottom: 30px;
 }
 
 .intro-title {
@@ -474,32 +474,41 @@ textarea {
     color: #000000;
 }
 
-/* SABİT YÜKSEKLİKLİ GALERİ ÇERÇEVESİ */
+/* --- BEYAZ ARKA PLANLI GALERİ BÖLÜMÜ (INTRODUCTION'DAN SONRASI) --- */
+.project-galleries-white-section {
+    background-color: #ffffff;
+    color: #000000;
+    width: 100%;
+    padding-top: 60px;
+    padding-bottom: 20px;
+}
+
 .gallery-category-section {
-    margin-bottom: 80px;
+    margin-bottom: 90px;
 }
 
 .category-header-clean {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
-.category-title {
+.category-header-clean .category-title {
     font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #ffffff;
+    color: #000000;
     font-weight: bold;
 }
 
+/* BÜYÜTÜLMÜŞ GALERİ ÇERÇEVESİ (750PX YÜKSEKLİK) */
 .bark-slider-wrapper {
     width: 100%;
-    height: 600px;
+    height: 750px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
-    background-color: #000000;
+    background-color: #ffffff;
 }
 
 .bark-slider-wrapper img {
@@ -516,28 +525,29 @@ textarea {
 }
 
 .bark-slider-wrapper img:hover {
-    opacity: 0.9;
+    opacity: 0.92;
 }
 
-/* Alt Navigasyon */
-.project-nav {
+/* BEYAZ BÖLÜM ALT NAVİGASYONU */
+.project-galleries-white-section .project-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-top: 40px;
-    border-top: 1px solid #333333;
+    border-top: 1px solid #e0e0e0;
 }
 
-.project-nav a {
-    color: #ffffff;
+.project-galleries-white-section .project-nav a {
+    color: #000000;
     text-decoration: none;
     font-size: 13px;
-    opacity: 0.7;
+    opacity: 0.75;
     transition: opacity 0.2s;
 }
 
-.project-nav a:hover {
+.project-galleries-white-section .project-nav a:hover {
     opacity: 1;
+    text-decoration: underline;
 }
 
 /* ==========================================================================
@@ -586,11 +596,12 @@ textarea {
         font-size: 22px;
     }
 
+    /* Mobilde Büyütülmüş Galeri Yüksekliği */
     .bark-slider-wrapper {
-        height: 360px;
+        height: 480px;
     }
 
-    .category-title {
+    .category-header-clean .category-title {
         font-size: 11px;
     }
 }
