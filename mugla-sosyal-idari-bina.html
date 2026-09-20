@@ -22,11 +22,12 @@
 
     <main class="bg-black">
         
-        <!-- Sayfa Girişi: Kırpmasız Tam Sığdırılan Kapak Render'ı -->
+        <!-- Sayfa Girişi: Kapak Render'ı (Siyah Bölüm) -->
         <div class="project-hero-cover">
             <img src="projects/mugla/cover.jpg" alt="Muğla Sosyal ve İdari Hizmetler Binası - Cover">
         </div>
 
+        <!-- Üst Siyah Bölüm: Künye Tablosu ve Introduction -->
         <div class="project-detail-container">
             
             <!-- Tablo Düzeninde Künye -->
@@ -94,43 +95,51 @@
                 </div>
             </div>
 
-            <!-- KATEGORİ 1: RENDERS -->
-            <div class="gallery-category-section">
-                <div class="category-header-clean">
-                    <div class="category-title">01 // RENDERS</div>
-                </div>
-                <div class="bark-slider-wrapper">
-                    <img id="renders-img" src="projects/mugla/renders/1.jpg" onclick="changeSlide('renders', 1)" onerror="handleImgError('renders')" alt="Render Image">
-                </div>
-            </div>
-
-            <!-- KATEGORİ 2: DIAGRAMS -->
-            <div class="gallery-category-section">
-                <div class="category-header-clean">
-                    <div class="category-title">02 // DIAGRAMS</div>
-                </div>
-                <div class="bark-slider-wrapper">
-                    <img id="diagrams-img" src="projects/mugla/diagrams/1.jpg" onclick="changeSlide('diagrams', 1)" onerror="handleImgError('diagrams')" alt="Diagram Image">
-                </div>
-            </div>
-
-            <!-- KATEGORİ 3: TECHNICAL DRAWINGS -->
-            <div class="gallery-category-section">
-                <div class="category-header-clean">
-                    <div class="category-title">03 // TECHNICAL DRAWINGS</div>
-                </div>
-                <div class="bark-slider-wrapper">
-                    <img id="drawings-img" src="projects/mugla/drawings/1.jpg" onclick="changeSlide('drawings', 1)" onerror="handleImgError('drawings')" alt="Technical Drawing Image">
-                </div>
-            </div>
-
-            <!-- Navigasyon -->
-            <div class="project-nav">
-                <a href="works.html">← Back to Works</a>
-                <a href="#">Next Project →</a>
-            </div>
-
         </div>
+
+        <!-- Alt Beyaz Bölüm: Galeriler (Renders, Diagrams, Technical Drawings) -->
+        <div class="project-galleries-white-section">
+            <div class="project-detail-container">
+                
+                <!-- KATEGORİ 1: RENDERS -->
+                <div class="gallery-category-section">
+                    <div class="category-header-clean">
+                        <div class="category-title">01 // RENDERS</div>
+                    </div>
+                    <div class="bark-slider-wrapper">
+                        <img id="renders-img" src="projects/mugla/renders/1.jpg" onclick="changeSlide('renders', 1)" onerror="handleImgError('renders')" alt="Render Image">
+                    </div>
+                </div>
+
+                <!-- KATEGORİ 2: DIAGRAMS -->
+                <div class="gallery-category-section">
+                    <div class="category-header-clean">
+                        <div class="category-title">02 // DIAGRAMS</div>
+                    </div>
+                    <div class="bark-slider-wrapper">
+                        <img id="diagrams-img" src="projects/mugla/diagrams/1.jpg" onclick="changeSlide('diagrams', 1)" onerror="handleImgError('diagrams')" alt="Diagram Image">
+                    </div>
+                </div>
+
+                <!-- KATEGORİ 3: TECHNICAL DRAWINGS -->
+                <div class="gallery-category-section">
+                    <div class="category-header-clean">
+                        <div class="category-title">03 // TECHNICAL DRAWINGS</div>
+                    </div>
+                    <div class="bark-slider-wrapper">
+                        <img id="drawings-img" src="projects/mugla/drawings/1.jpg" onclick="changeSlide('drawings', 1)" onerror="handleImgError('drawings')" alt="Technical Drawing Image">
+                    </div>
+                </div>
+
+                <!-- Navigasyon -->
+                <div class="project-nav">
+                    <a href="works.html">← Back to Works</a>
+                    <a href="#">Next Project →</a>
+                </div>
+
+            </div>
+        </div>
+
     </main>
 
     <footer>
