@@ -22,7 +22,7 @@
 
     <main class="bg-black">
         
-        <!-- Sayfaya Girer Girmez Tüm Ekranı Kaplayan Kapak Render'ı -->
+        <!-- Sayfa Girişi: Tam Ekran Kapak Render'ı -->
         <div class="project-hero-cover">
             <img src="projects/mugla/cover.jpg" alt="Muğla Sosyal ve İdari Hizmetler Binası - Main Cover">
         </div>
@@ -31,8 +31,6 @@
             
             <!-- Tablo Düzeninde Künye -->
             <div class="project-header-grid">
-                
-                <!-- Sol Sütun: Başlık, Etiketler, Ekip -->
                 <div class="project-left-col">
                     <h1>Muğla Büyükşehir Belediyesi Sosyal, Kültürel ve İdari Hizmetler Binası</h1>
                     
@@ -55,7 +53,6 @@
                     </div>
                 </div>
 
-                <!-- Sağ Sütun: Detay Tablosu -->
                 <div class="project-specs-table">
                     <div class="spec-row">
                         <span class="spec-label">DATE</span>
@@ -78,10 +75,9 @@
                         <span class="spec-value">Muğla Büyükşehir Belediyesi</span>
                     </div>
                 </div>
-
             </div>
 
-            <!-- INTRODUCTION (Genişletilebilir Proje Raporu Kutusu) -->
+            <!-- INTRODUCTION (Genişletilebilir Proje Raporu) -->
             <div class="intro-section">
                 <div class="intro-title">INTRODUCTION</div>
                 <div class="intro-box" id="introBox">
@@ -103,13 +99,14 @@
                 <div class="category-header">
                     <div class="category-title">01 // RENDERS</div>
                     <div class="slider-controls">
-                        <span class="slider-counter" id="renders-counter">1 / 5</span>
+                        <span class="slider-counter" id="renders-counter">IMAGE 1</span>
                         <button class="slider-btn" onclick="changeSlide('renders', -1)">&#10094;</button>
                         <button class="slider-btn" onclick="changeSlide('renders', 1)">&#10095;</button>
                     </div>
                 </div>
                 <div class="slider-display">
-                    <img id="renders-img" src="projects/mugla/cover.jpg" alt="Render Image">
+                    <!-- Görsele tıklayınca sıradakine geçer -->
+                    <img id="renders-img" src="projects/mugla/renders/1.jpg" onclick="changeSlide('renders', 1)" onerror="handleImgError('renders')" alt="Render Image">
                 </div>
             </div>
 
@@ -118,13 +115,13 @@
                 <div class="category-header">
                     <div class="category-title">02 // DIAGRAMS</div>
                     <div class="slider-controls">
-                        <span class="slider-counter" id="diagrams-counter">1 / 5</span>
+                        <span class="slider-counter" id="diagrams-counter">IMAGE 1</span>
                         <button class="slider-btn" onclick="changeSlide('diagrams', -1)">&#10094;</button>
                         <button class="slider-btn" onclick="changeSlide('diagrams', 1)">&#10095;</button>
                     </div>
                 </div>
                 <div class="slider-display">
-                    <img id="diagrams-img" src="projects/mugla/6.jpg" alt="Diagram Image">
+                    <img id="diagrams-img" src="projects/mugla/diagrams/1.jpg" onclick="changeSlide('diagrams', 1)" onerror="handleImgError('diagrams')" alt="Diagram Image">
                 </div>
             </div>
 
@@ -133,13 +130,13 @@
                 <div class="category-header">
                     <div class="category-title">03 // TECHNICAL DRAWINGS</div>
                     <div class="slider-controls">
-                        <span class="slider-counter" id="drawings-counter">1 / 5</span>
+                        <span class="slider-counter" id="drawings-counter">IMAGE 1</span>
                         <button class="slider-btn" onclick="changeSlide('drawings', -1)">&#10094;</button>
                         <button class="slider-btn" onclick="changeSlide('drawings', 1)">&#10095;</button>
                     </div>
                 </div>
                 <div class="slider-display">
-                    <img id="drawings-img" src="projects/mugla/11.jpg" alt="Technical Drawing Image">
+                    <img id="drawings-img" src="projects/mugla/drawings/1.jpg" onclick="changeSlide('drawings', 1)" onerror="handleImgError('drawings')" alt="Technical Drawing Image">
                 </div>
             </div>
 
@@ -165,56 +162,40 @@
         </div>
     </footer>
 
-    <!-- Slider & Intro Kod Mantığı -->
+    <!-- Otomatik Klasör & Tıklama Mantığı -->
     <script>
-        // Görsel Yollarının Kategorilere Göre Tanımlanması
-        const sliders = {
-            renders: {
-                images: [
-                    'projects/mugla/cover.jpg',
-                    'projects/mugla/1.jpg',
-                    'projects/mugla/2.jpg',
-                    'projects/mugla/3.jpg',
-                    'projects/mugla/4.jpg',
-                    'projects/mugla/5.jpg'
-                ],
-                index: 0
-            },
-            diagrams: {
-                images: [
-                    'projects/mugla/6.jpg',
-                    'projects/mugla/7.jpg',
-                    'projects/mugla/8.jpg',
-                    'projects/mugla/9.jpg',
-                    'projects/mugla/10.jpg'
-                ],
-                index: 0
-            },
-            drawings: {
-                images: [
-                    'projects/mugla/11.jpg',
-                    'projects/mugla/12.jpg',
-                    'projects/mugla/13.jpg',
-                    'projects/mugla/14.jpg',
-                    'projects/mugla/15.jpg'
-                ],
-                index: 0
-            }
+        const categories = {
+            renders: { folder: 'projects/mugla/renders/', index: 1 },
+            diagrams: { folder: 'projects/mugla/diagrams/', index: 1 },
+            drawings: { folder: 'projects/mugla/drawings/', index: 1 }
         };
 
         function changeSlide(category, direction) {
-            const slider = sliders[category];
-            if (!slider) return;
+            const cat = categories[category];
+            if (!cat) return;
 
-            slider.index += direction;
-            if (slider.index < 0) slider.index = slider.images.length - 1;
-            if (slider.index >= slider.images.length) slider.index = 0;
+            cat.index += direction;
+            if (cat.index < 1) cat.index = 1;
 
+            updateCategoryDisplay(category);
+        }
+
+        // Klasördeki son resmi geçince otomatik başa (1.jpg'ye) döndüren fonksiyon
+        function handleImgError(category) {
+            const cat = categories[category];
+            if (cat && cat.index > 1) {
+                cat.index = 1;
+                updateCategoryDisplay(category);
+            }
+        }
+
+        function updateCategoryDisplay(category) {
+            const cat = categories[category];
             const imgEl = document.getElementById(category + '-img');
             const counterEl = document.getElementById(category + '-counter');
 
-            if (imgEl) imgEl.src = slider.images[slider.index];
-            if (counterEl) counterEl.innerText = (slider.index + 1) + ' / ' + slider.images.length;
+            if (imgEl) imgEl.src = cat.folder + cat.index + '.jpg';
+            if (counterEl) counterEl.innerText = 'IMAGE ' + cat.index;
         }
 
         function toggleIntro() {
