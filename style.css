@@ -302,3 +302,32 @@ textarea {
         text-align: left;
     }
 }
+/* Home Sayfası Orta Logo Animasyonu (Pop / Bounce Effect) */
+.home-hero-logo {
+    width: 380px;
+    max-width: 85%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    animation: logoPop 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    transform-origin: center center;
+}
+
+@keyframes logoPop {
+    0% {
+        transform: scale(0.05);
+        opacity: 0;
+    }
+    70% {
+        transform: scale(1.12);
+        opacity: 1;
+    }
+    85% {
+        transform: scale(0.95);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
