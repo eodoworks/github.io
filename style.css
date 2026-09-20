@@ -310,26 +310,22 @@ textarea {
 }
 
 /* ==========================================================================
-   8. PROJE DETAY SAYFASI (TAM EKRAN KAPAK, KÜNYE, INTRO, GALERİ)
+   8. PROJE DETAY SAYFASI
    ========================================================================== */
 
-/* SAĞA VE SOLA %100 DAYALI TAM EKRAN KAPAK RENDER'I (BOŞLUKSUZ) */
+/* SAĞA VE SOLA SIFIRLANMIŞ, KIRPMASIZ VE ORİJİNAL ORANLI KAPAK RENDER'I */
 .project-hero-cover {
     width: 100% !important;
-    height: 85vh !important;
+    height: auto !important;
     margin: 0 0 60px 0 !important;
     padding: 0 !important;
-    overflow: hidden;
     background-color: #000000;
 }
 
 .project-hero-cover img {
     width: 100% !important;
-    height: 100% !important;
+    height: auto !important;
     max-width: 100% !important;
-    max-height: 85vh !important;
-    object-fit: cover !important;
-    object-position: center !important;
     display: block !important;
 }
 
@@ -478,7 +474,7 @@ textarea {
     color: #000000;
 }
 
-/* SABİT YÜKSEKLİKLİ GALERİ ÇERÇEVESİ (ALTTAN VE ÜSTTEN SAYFAYI KAYDIRMAZ) */
+/* SABİT YÜKSEKLİKLİ GALERİ ÇERÇEVESİ */
 .gallery-category-section {
     margin-bottom: 80px;
 }
@@ -579,12 +575,7 @@ textarea {
     }
 
     .project-hero-cover {
-        height: 50vh !important;
-        margin-bottom: 40px !important;
-    }
-
-    .project-hero-cover img {
-        max-height: 50vh !important;
+        margin-bottom: 30px !important;
     }
 
     .project-detail-container {
