@@ -308,7 +308,7 @@ textarea {
 }
 
 /* ==========================================================================
-   8. PROJE DETAY SAYFASI (KAPAK, KÜNYE, INTRO, GALERİ)
+   8. PROJE DETAY SAYFASI
    ========================================================================== */
 .project-hero-cover {
     width: 100%;
@@ -475,7 +475,7 @@ textarea {
     color: #000000;
 }
 
-/* --- ÇİZGİSİZ, OKSUZ & SABİT YÜKSEKLİKLİ GALERİ --- */
+/* --- KİLİTLİ VE SABİT YÜKSEKLİKLİ GALERİ ÇERÇEVESİ --- */
 .gallery-category-section {
     margin-bottom: 80px;
 }
@@ -492,15 +492,16 @@ textarea {
     font-weight: bold;
 }
 
-/* Sabit Yükseklikli Görsel Çerçevesi (Alttaki İçeriklerin Kaymasını Önler) */
+/* Yüksekliği Kesin Olarak 600px Sabit Kapsayıcı (Sayfa Zıplamasını Sıfırlar) */
 .bark-slider-wrapper {
     width: 100%;
-    height: 70vh;
-    min-height: 450px;
+    height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    overflow: hidden;
+    background-color: #000000;
 }
 
 .bark-slider-wrapper img {
@@ -588,9 +589,9 @@ textarea {
         font-size: 22px;
     }
 
+    /* Mobilde Sabit Yükseklik */
     .bark-slider-wrapper {
-        height: 45vh;
-        min-height: 280px;
+        height: 360px;
     }
 
     .category-title {
