@@ -423,3 +423,13 @@ footer {
         font-size: 11px;
     }
 }
+/* Görsele tıklama imleci ve hafif opaklık efekti */
+.slider-display img {
+    cursor: pointer;
+    user-select: none;
+    transition: opacity 0.2s ease;
+}
+
+.slider-display img:hover {
+    opacity: 0.92;
+}
