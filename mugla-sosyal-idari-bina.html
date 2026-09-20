@@ -23,118 +23,99 @@
     <main class="bg-black">
         <div class="project-detail-container">
             
-            <div class="project-header">
-                <h1 class="project-title">Muğla Büyükşehir Belediyesi Sosyal, Kültürel ve İdari Hizmetler Binası</h1>
-            </div>
-
-            <!-- Künye -->
-            <div class="project-meta-grid">
-                <div class="meta-item">
-                    <h4>Location</h4>
-                    <p>Muğla, Turkey</p>
-                </div>
-                <div class="meta-item">
-                    <h4>Year</h4>
-                    <p>2026</p>
-                </div>
-                <div class="meta-item">
-                    <h4>Type</h4>
-                    <p>Architectural Competition / Public Building</p>
-                </div>
-                <div class="meta-item">
-                    <h4>Status</h4>
-                    <p>Competition Entry</p>
-                </div>
-                <div class="meta-item">
-                    <h4>Team</h4>
-                    <p>
-                        Emre Eren Özaşık<br>
-                        Zehra Öykü Çimoğlu<br>
-                        Doğa Döngel<br>
-                        Aleyna İnal<br>
-                        Büşra Karamehmetoğlu
-                    </p>
-                </div>
-                <div class="meta-item">
-                    <h4>Consultants</h4>
-                    <p>
-                        Serhat Oğuz Döngel<br>
-                        Sadık Metin Okay
-                    </p>
-                </div>
-            </div>
-
-            <!-- Proje Metni -->
-            <div class="project-description">
-                <p>
-                    Muğla'nın yerel coğrafyası, iklimsel verileri ve özgün kentsel dokusuyla güçlü bir diyalog kuran proje; idari, sosyal ve kültürel işlevleri bütüncül ve geçirgen bir strüktür altında bir araya getirir. Yapı, kamusal kullanımı teşvik eden açık ve yarı açık mekan kurgusu, yerel malzeme kullanımı ve sürdürülebilir pasif iklimlendirme stratejileriyle kentin günlük yaşantısına dahil olan esnek bir odak noktası olarak kurgulanmıştır.
-                </p>
-            </div>
-
-            <!-- Görsel Akışı (20 Görsel Düzeni) -->
-            <div class="project-gallery-stack">
+            <!-- Tablo Düzeninde 2 Sütunlu Künye -->
+            <div class="project-header-grid">
                 
-                <!-- Ana Kapak / Render (Tam Genişlik) -->
-                <img src="projects/mugla/cover.jpg" alt="Ana Render">
+                <!-- Sol Sütun: Başlık, Etiketler, Ekip -->
+                <div class="project-left-col">
+                    <h1>Muğla Büyükşehir Belediyesi Sosyal, Kültürel ve İdari Hizmetler Binası</h1>
+                    
+                    <div class="project-tags">
+                        <span class="tag-box">ARCHITECTURAL COMPETITION</span>
+                        <span class="tag-box">PUBLIC BUILDING</span>
+                    </div>
 
-                <!-- 2'li Yan Yana Görseller (Diyagramlar / Analizler) -->
-                <div class="img-grid-2">
-                    <img src="projects/mugla/1.jpg" alt="Diyagram 1">
-                    <img src="projects/mugla/2.jpg" alt="Diyagram 2">
+                    <div class="team-list-section">
+                        <h4>Project Team:</h4>
+                        <p>Emre Eren Özaşık, <i>Architect</i></p>
+                        <p>Zehra Öykü Çimoğlu, <i>Architect</i></p>
+                        <p>Doğa Döngel, <i>Architect</i></p>
+                        <p>Aleyna İnal, <i>Architect</i></p>
+                        <p>Büşra Karamehmetoğlu, <i>Architect</i></p>
+
+                        <h4>Consultants:</h4>
+                        <p>Serhat Oğuz Döngel</p>
+                        <p>Sadık Metin Okay</p>
+                    </div>
                 </div>
 
-                <!-- Tam Genişlik Pafta / Vaziyet Planı -->
-                <img src="projects/mugla/3.jpg" alt="Vaziyet Planı">
-
-                <!-- 2'li Yan Yana Görseller -->
-                <div class="img-grid-2">
-                    <img src="projects/mugla/4.jpg" alt="Görsel 4">
-                    <img src="projects/mugla/5.jpg" alt="Görsel 5">
+                <!-- Sağ Sütun: Detay Tablosu (Key - Value) -->
+                <div class="project-specs-table">
+                    <div class="spec-row">
+                        <span class="spec-label">DATE</span>
+                        <span class="spec-value">2026</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">TYPE</span>
+                        <span class="spec-value">Architectural Competition / Public Building</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">LOCATION</span>
+                        <span class="spec-value">Muğla, Turkey</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">STATUS</span>
+                        <span class="spec-value">Competition Entry</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">CLIENT</span>
+                        <span class="spec-value">Muğla Büyükşehir Belediyesi</span>
+                    </div>
                 </div>
 
-                <!-- Tam Genişlik Kesit / Görünüş -->
-                <img src="projects/mugla/6.jpg" alt="Sistem Kesiti">
+            </div>
 
-                <!-- 2'li Yan Yana Görseller -->
-                <div class="img-grid-2">
-                    <img src="projects/mugla/7.jpg" alt="Görsel 7">
-                    <img src="projects/mugla/8.jpg" alt="Görsel 8">
+            <!-- INTRODUCTION (Genişletilebilir Proje Raporu Kutusu) -->
+            <div class="intro-section">
+                <div class="intro-title">INTRODUCTION</div>
+                <div class="intro-box" id="introBox">
+                    <div class="intro-content">
+                        <p>
+                            Muğla'nın yerel coğrafyası, iklimsel verileri ve özgün kentsel dokusuyla güçlü bir diyalog kuran proje; idari, sosyal ve kültürel işlevleri bütüncül ve geçirgen bir strüktür altında bir araya getirir. Yapı, kamusal kullanımı teşvik eden açık ve yarı açık mekan kurgusu, yerel malzeme kullanımı ve sürdürülebilir pasif iklimlendirme stratejileriyle kentin günlük yaşantısına dahil olan esnek bir odak noktası olarak kurgulanmıştır.
+                        </p>
+                        <br>
+                        <p>
+                            Kentsel omurga boyunca uzanan sirkülasyon aksları, kamusal meydan ve avlu yaşantısını yapının iç mekanlarına doğru kesintisiz bir biçimde taşır. İdari birimler rasyonel ve esnek çalışma alanları sunarken, sosyal ve kültürel mekanlar kentsel etkileşimi artıran geçirgen çeperlerle çevrelenmiştir.
+                        </p>
+                    </div>
+                    <!-- Genişletme / Daraltma Butonu (+ / −) -->
+                    <button class="intro-toggle-btn" onclick="toggleIntro()" id="introBtn">+</button>
                 </div>
+            </div>
 
-                <!-- Tam Genişlik Görsel -->
-                <img src="projects/mugla/9.jpg" alt="Görsel 9">
-
-                <!-- 2'li Yan Yana Görseller -->
-                <div class="img-grid-2">
-                    <img src="projects/mugla/10.jpg" alt="Görsel 10">
-                    <img src="projects/mugla/11.jpg" alt="Görsel 11">
-                </div>
-
-                <!-- 2'li Yan Yana Görseller -->
-                <div class="img-grid-2">
-                    <img src="projects/mugla/12.jpg" alt="Görsel 12">
-                    <img src="projects/mugla/13.jpg" alt="Görsel 13">
-                </div>
-
-                <!-- Tam Genişlik Görsel -->
-                <img src="projects/mugla/14.jpg" alt="Görsel 14">
-
-                <!-- 2'li Yan Yana Görseller -->
-                <div class="img-grid-2">
-                    <img src="projects/mugla/15.jpg" alt="Görsel 15">
-                    <img src="projects/mugla/16.jpg" alt="Görsel 16">
-                </div>
-
-                <!-- 2'li Yan Yana Görseller -->
-                <div class="img-grid-2">
-                    <img src="projects/mugla/17.jpg" alt="Görsel 17">
-                    <img src="projects/mugla/18.jpg" alt="Görsel 18">
-                </div>
-
-                <!-- Tam Genişlik Kapanış Renderı -->
-                <img src="projects/mugla/19.jpg" alt="Görsel 19">
-                <img src="projects/mugla/20.jpg" alt="Görsel 20">
-
+            <!-- DİKEY VE KONTROLLÜ GÖRSEL AKIŞI (1'den 20'ye Sırayla) -->
+            <div class="project-images-stack">
+                <img src="projects/mugla/cover.jpg" onerror="this.style.display='none'" alt="Muğla Cover">
+                <img src="projects/mugla/1.jpg" onerror="this.style.display='none'" alt="Görsel 1">
+                <img src="projects/mugla/2.jpg" onerror="this.style.display='none'" alt="Görsel 2">
+                <img src="projects/mugla/3.jpg" onerror="this.style.display='none'" alt="Görsel 3">
+                <img src="projects/mugla/4.jpg" onerror="this.style.display='none'" alt="Görsel 4">
+                <img src="projects/mugla/5.jpg" onerror="this.style.display='none'" alt="Görsel 5">
+                <img src="projects/mugla/6.jpg" onerror="this.style.display='none'" alt="Görsel 6">
+                <img src="projects/mugla/7.jpg" onerror="this.style.display='none'" alt="Görsel 7">
+                <img src="projects/mugla/8.jpg" onerror="this.style.display='none'" alt="Görsel 8">
+                <img src="projects/mugla/9.jpg" onerror="this.style.display='none'" alt="Görsel 9">
+                <img src="projects/mugla/10.jpg" onerror="this.style.display='none'" alt="Görsel 10">
+                <img src="projects/mugla/11.jpg" onerror="this.style.display='none'" alt="Görsel 11">
+                <img src="projects/mugla/12.jpg" onerror="this.style.display='none'" alt="Görsel 12">
+                <img src="projects/mugla/13.jpg" onerror="this.style.display='none'" alt="Görsel 13">
+                <img src="projects/mugla/14.jpg" onerror="this.style.display='none'" alt="Görsel 14">
+                <img src="projects/mugla/15.jpg" onerror="this.style.display='none'" alt="Görsel 15">
+                <img src="projects/mugla/16.jpg" onerror="this.style.display='none'" alt="Görsel 16">
+                <img src="projects/mugla/17.jpg" onerror="this.style.display='none'" alt="Görsel 17">
+                <img src="projects/mugla/18.jpg" onerror="this.style.display='none'" alt="Görsel 18">
+                <img src="projects/mugla/19.jpg" onerror="this.style.display='none'" alt="Görsel 19">
+                <img src="projects/mugla/20.jpg" onerror="this.style.display='none'" alt="Görsel 20">
             </div>
 
             <!-- Navigasyon -->
@@ -158,6 +139,21 @@
             <a href="mailto:info@eodoworks.com">info@eodoworks.com</a>
         </div>
     </footer>
+
+    <!-- Introduction Genişletme Kod Mantığı -->
+    <script>
+        function toggleIntro() {
+            const box = document.getElementById('introBox');
+            const btn = document.getElementById('introBtn');
+            box.classList.toggle('expanded');
+            
+            if (box.classList.contains('expanded')) {
+                btn.innerText = '−';
+            } else {
+                btn.innerText = '+';
+            }
+        }
+    </script>
 
 </body>
 </html>
