@@ -638,3 +638,24 @@ img, video {
     -webkit-user-drag: none;
     pointer-events: auto;
 }
+/* --- ANASAYFA ÖZEL FOOTER (SİYAH ARKA PLAN) --- */
+footer.home-footer {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    position: relative;
+    z-index: 10;
+}
+
+footer.home-footer .footer-copy {
+    color: #aaaaaa !important;
+    border-bottom: 1px solid #555555 !important;
+}
+
+footer.home-footer .footer-right a {
+    color: #ffffff !important;
+}
+
+footer.home-footer .footer-right a:hover {
+    opacity: 0.7;
+}
