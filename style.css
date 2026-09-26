@@ -628,3 +628,66 @@ textarea {
         gap: 50px !important;
     }
 }
+/* ==========================================================================
+   ANASAYFA ÖZEL: TRANSPARAN ÜST ŞERİT VE NET, SİYAH-BEYAZ, GRENLİ VİDEO
+   ========================================================================== */
+body.home-page {
+    position: relative;
+    background-color: #000000;
+}
+
+/* Sadece anasayfada header en üstte, transparan ve videonun üzerinde yer alır */
+body.home-page header {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    background-color: rgba(0, 0, 0, 0.35) !important; /* Yarı saydam transparan siyah şerit */
+    backdrop-filter: blur(6px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Tam ekran arka plan video katmanı */
+.home-fullscreen-video-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.home-fullscreen-video-bg video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    /* Blur kaldırıldı; tamamen siyah-beyaz, yüksek netlik, kontrast ve gren hissi veren filtreler uygulandı */
+    filter: grayscale(100%) contrast(1.45) brightness(0.65) saturate(0);
+    transform: scale(1.02);
+}
+
+/* Videonun üzerindeki hafif sinematik gren dokusu ve tül katmanı */
+.home-video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.35); /* Videonun net görünmesi için hafifletilmiş karartma */
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Anasayfa main alanı */
+body.home-page main {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
