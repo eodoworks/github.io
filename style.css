@@ -15,6 +15,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     overflow-x: hidden;
+    overflow-y: scroll; /* Kaydırma çubuğunu sabitleyerek sayfalar arası kaymayı engeller */
 }
 
 main {
