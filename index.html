@@ -14,7 +14,15 @@
 
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="home-page">
+
+    <!-- Arka Planda Tam Ekran Sessiz, Siyah-Beyaz ve Blurlu Video -->
+    <div class="home-fullscreen-video-bg">
+        <video autoplay muted loop playsinline>
+            <source src="eodo-bg.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="home-video-overlay"></div>
 
     <header>
         <a href="index.html" class="nav-logo">
@@ -28,11 +36,8 @@
         </nav>
     </header>
 
-    <main class="bg-black" style="display: flex; align-items: center; justify-content: center;">
-        <div style="text-align: center;">
-            <img src="home-logo.png" alt="eodo logo" class="home-hero-logo">
-            <div class="home-hero-subtitle">ARCHITECTURE • DESIGN • RESEARCH • URBANISM</div>
-        </div>
+    <main>
+        <!-- Mor işaretlediğin tüm alan tamamen video arka planı oldu, ortada logo yok -->
     </main>
 
     <footer>
