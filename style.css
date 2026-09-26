@@ -706,13 +706,13 @@ body {
     }
 }
 /* ==========================================================================
-   MOBİL İÇİN ANASAYFA VİDEO EKRANA SIĞDIRMA AYARI
+   MOBİL ANASAYFA VİDEO KIRPMAYI ENGELLEME (EKRANA TAM SIĞDIRMA)
    ========================================================================== */
 @media (max-width: 768px) {
     body.home-page .home-fullscreen-video-bg video {
         width: 100vw !important;
         height: 100vh !important;
-        object-fit: cover !important; /* Mobilde dikey/yatay ekrana oranla tam sığdırma */
-        transform: scale(1) !important; /* Fazla zoom'u sıfırlayarak ekrana sığdırır */
+        object-fit: contain !important; /* Videonun hiçbir yerini kırpmaz, tamamını ekrana sığdırır */
+        transform: scale(1) !important;
     }
 }
