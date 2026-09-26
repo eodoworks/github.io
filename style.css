@@ -628,3 +628,12 @@ textarea {
         gap: 50px !important;
     }
 }
+/* --- GÖRSEL VE VİDEO KOPYALAMA / SÜRÜKLEME KORUMASI --- */
+img, video {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    pointer-events: auto;
+}
