@@ -705,3 +705,14 @@ body {
         gap: 0 !important;
     }
 }
+/* ==========================================================================
+   MOBİL İÇİN ANASAYFA VİDEO EKRANA SIĞDIRMA AYARI
+   ========================================================================== */
+@media (max-width: 768px) {
+    body.home-page .home-fullscreen-video-bg video {
+        width: 100vw !important;
+        height: 100vh !important;
+        object-fit: cover !important; /* Mobilde dikey/yatay ekrana oranla tam sığdırma */
+        transform: scale(1) !important; /* Fazla zoom'u sıfırlayarak ekrana sığdırır */
+    }
+}
