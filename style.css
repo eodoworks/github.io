@@ -45,3 +45,10 @@
     position: relative;
     z-index: 2; /* İçerik her zaman videonun üstünde görünür */
 }
+/* Anasayfa özel logosunun boyutunu sabitleme */
+.home-hero-logo {
+    max-width: 220px !important; /* Logonun ekrandaki ideal genişliği */
+    width: 100% !important;
+    height: auto !important;
+    margin-bottom: 15px !important;
+}
