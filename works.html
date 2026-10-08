@@ -21,7 +21,7 @@
         e.preventDefault();
     });
 
-    // Klavye üzerinden görsel sürükleme veya kaydetme kısayollarını (Ctrl+S vb. değil ama sürüklemeyi) engelleme
+    // Klavye üzerinden görsel sürükleme veya kaydetme kısayollarını engelleme
     document.addEventListener('dragstart', function(e) {
         if (e.target.nodeName === 'IMG' || e.target.nodeName === 'VIDEO') {
             e.preventDefault();
@@ -46,7 +46,7 @@
         
         <div class="project-grid">
 
-            <!-- PROJE 1: Muğla Sosyal, Kültürel ve İdari Hizmetler Binası -->
+            <!-- PROJE 1: Muğla Sosyal, Kültürel ve İdari Hizmetler Binası (Tıklanabilir) -->
             <a href="mugla-sosyal-idari-bina.html" class="project-card">
                 <div class="img-wrapper">
                     <img src="projects/mugla/cover.jpg" alt="Muğla Büyükşehir Belediyesi Sosyal, Kültürel ve İdari Hizmetler Binası">
@@ -56,6 +56,28 @@
                     <p>Architectural Competition / Muğla, 2026</p>
                 </div>
             </a>
+
+            <!-- PROJE 2: İKSO (Henüz Tıklanamaz - Sadece Kapak) -->
+            <div class="project-card" style="cursor: default;">
+                <div class="img-wrapper">
+                    <img src="ikso-cover.jpg" alt="İKSO">
+                </div>
+                <div class="project-info">
+                    <h3>İKSO</h3>
+                    <p>Architectural Design • 2026</p>
+                </div>
+            </div>
+
+            <!-- PROJE 3: White Cliff Visitor Center (Henüz Tıklanamaz - Sadece Kapak) -->
+            <div class="project-card" style="cursor: default;">
+                <div class="img-wrapper">
+                    <img src="whitecliff-cover.jpg" alt="White Cliff Visitor Center">
+                </div>
+                <div class="project-info">
+                    <h3>White Cliff Visitor Center</h3>
+                    <p>Architectural Design • 2026</p>
+                </div>
+            </div>
 
         </div>
 
