@@ -14,22 +14,34 @@
 
     <link rel="stylesheet" href="style.css">
 </head>
-    <script>
+<script>
     // Sağ tık menüsünü engelleme
     document.addEventListener('contextmenu', function(e) {
         e.preventDefault();
     });
 
-    // Klavye üzerinden görsel sürükleme veya kaydetme kısayollarını (Ctrl+S vb. değil ama sürüklemeyi) engelleme
+    // Klavye üzerinden görsel sürükleme veya kaydetme kısayollarını engelleme
     document.addEventListener('dragstart', function(e) {
         if (e.target.nodeName === 'IMG' || e.target.nodeName === 'VIDEO') {
             e.preventDefault();
         }
     });
+
+    // Mouse hareketine göre arka plan videosunu hafifçe hareket ettirme (Parallax Efekti)
+    document.addEventListener('mousemove', function(e) {
+        const videoBg = document.querySelector('.home-fullscreen-video-bg video');
+        if (!videoBg) return;
+
+        // Ekranın merkezine göre mouse konumunu hesapla
+        const x = (e.clientX / window.innerWidth - 0.5) * 20; // Yatayda max 20px kayma
+        const y = (e.clientY / window.innerHeight - 0.5) * 20; // Dikeyde max 20px kayma
+
+        videoBg.style.transform = `scale(1.05) translate(${x}px, ${y}px)`;
+    });
 </script>
 <body class="home-page">
 
-    <!-- Arka Planda Tam Ekran Sessiz, Siyah-Beyaz ve Blurlu Video -->
+    <!-- Arka Planda Tam Ekran Sessiz, Siyah-Beyaz ve Grenli Video -->
     <div class="home-fullscreen-video-bg">
         <video autoplay muted loop playsinline>
             <source src="eodo-bg.mp4" type="video/mp4">
@@ -50,7 +62,7 @@
     </header>
 
     <main>
-        <!-- Mor işaretlediğin tüm alan tamamen video arka planı oldu, ortada logo yok -->
+        <!-- Tam ekran video arka plan alanı -->
     </main>
 
     <footer class="home-footer">
