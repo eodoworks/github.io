@@ -26,18 +26,6 @@
             e.preventDefault();
         }
     });
-
-    // Mouse hareketine göre arka plan videosunu hafifçe hareket ettirme (Parallax Efekti)
-    document.addEventListener('mousemove', function(e) {
-        const videoBg = document.querySelector('.home-fullscreen-video-bg video');
-        if (!videoBg) return;
-
-        // Ekranın merkezine göre mouse konumunu hesapla
-        const x = (e.clientX / window.innerWidth - 0.5) * 20; // Yatayda max 20px kayma
-        const y = (e.clientY / window.innerHeight - 0.5) * 20; // Dikeyde max 20px kayma
-
-        videoBg.style.transform = `scale(1.05) translate(${x}px, ${y}px)`;
-    });
 </script>
 <body class="home-page">
 
