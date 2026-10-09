@@ -14,13 +14,13 @@
 
     <link rel="stylesheet" href="style.css">
 </head>
-    <script>
+<script>
     // Sağ tık menüsünü engelleme
     document.addEventListener('contextmenu', function(e) {
         e.preventDefault();
     });
 
-    // Klavye üzerinden görsel sürükleme veya kaydetme kısayollarını (Ctrl+S vb. değil ama sürüklemeyi) engelleme
+    // Klavye üzerinden görsel sürükleme veya kaydetme kısayollarını engelleme
     document.addEventListener('dragstart', function(e) {
         if (e.target.nodeName === 'IMG' || e.target.nodeName === 'VIDEO') {
             e.preventDefault();
@@ -29,7 +29,7 @@
 </script>
 <body class="home-page">
 
-    <!-- Arka Planda Tam Ekran Sessiz, Siyah-Beyaz ve Blurlu Video -->
+    <!-- Arka Planda Tam Ekran Sessiz, Siyah-Beyaz ve Grenli Video -->
     <div class="home-fullscreen-video-bg">
         <video autoplay muted loop playsinline>
             <source src="eodo-bg.mp4" type="video/mp4">
@@ -50,9 +50,10 @@
     </header>
 
     <main>
-        <!-- Mor işaretlediğin tüm alan tamamen video arka planı oldu, ortada logo yok -->
+        <!-- Tam ekran video arka plan alanı -->
     </main>
 
+    <!-- Siyah Footer Sınıfı Eklendi -->
     <footer class="home-footer">
         <div class="footer-logo">
             <img src="logo-white.png" alt="eodo">
