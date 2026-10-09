@@ -34,7 +34,7 @@ main {
 }
 
 /* ==========================================================================
-   2. NAVİGASYON / HEADER (DİĞER SAYFALAR İÇİN)
+   2. NAVİGASYON / HEADER
    ========================================================================== */
 header {
     background-color: #000000;
@@ -132,7 +132,6 @@ body.home-page header {
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Tam ekran arka plan video katmanı */
 body.home-page .home-fullscreen-video-bg {
     position: fixed;
     top: 0;
@@ -164,7 +163,7 @@ body.home-page .home-video-overlay {
     pointer-events: none;
 }
 
-/* Anasayfa main alanı: Tam olarak 100vh yapar, böylece ilk ekranda footer görünmez, aşağı kaydırınca çıkar */
+/* Anasayfa main alanını tam ekran yaparak footer'ı ilk ekranda aşağı iter */
 body.home-page main {
     height: 100vh;
     width: 100vw;
@@ -625,7 +624,7 @@ footer.home-footer .footer-right a:hover {
     opacity: 0.7;
 }
 
-/* --- SAYFALAR ARASI YUMUŞAK GEÇİŞ (FADE-IN EFEKTİ) --- */
+/* --- SAYFALAR ARASI YUMUŞAK GEÇİŞ --- */
 @keyframes pageFadeIn {
     from {
         opacity: 0;
