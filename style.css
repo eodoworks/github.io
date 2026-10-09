@@ -113,11 +113,14 @@ footer {
 }
 
 /* ==========================================================================
-   4. HOME SAYFASI ÖZEL & İNTRO LOGO ANİMASYONU
+   4. HOME SAYFASI ÖZEL (VİDEO VE FOOTER AŞAĞI KAYDIRMA MİMARİSİ)
    ========================================================================== */
 body.home-page {
     position: relative;
     background-color: #000000;
+    /* Anasayfanın yüksekliğini tam 100vh kilitliyoruz, footer ekranın altında gizleniyor */
+    height: 100vh;
+    overflow-y: scroll;
 }
 
 body.home-page header {
@@ -162,12 +165,34 @@ body.home-page .home-video-overlay {
     pointer-events: none;
 }
 
-/* Anasayfa main alanı: Yüksekliği tam 100vh yapılarak footer ekran dışına itilir */
 body.home-page main {
     height: 100vh;
     width: 100vw;
-    position: relative;
-    z-index: 1;
+}
+
+/* Anasayfa özel siyah footer: İlk ekranda tam ekranın altında (görünmez) durur, kaydırınca gelir */
+footer.home-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    z-index: 10;
+}
+
+footer.home-footer .footer-copy {
+    color: #aaaaaa !important;
+    border-bottom: 1px solid #555555 !important;
+}
+
+footer.home-footer .footer-right a {
+    color: #ffffff !important;
+}
+
+footer.home-footer .footer-right a:hover {
+    opacity: 0.7;
 }
 
 /* BIG Tarzı Ortadan Sol Üste Giden Logo Animasyonu */
@@ -261,495 +286,477 @@ body.home-page main {
 .project-info h3 {
     font-size: 15px;
     font-weight: bold;
-    margin-bottom: 4px;
-}
-
-.project-info p {
-    font-size: 12px;
-    opacity: 0.6;
-}
-
-/* ==========================================================================
-   6. ABOUT SAYFASI
-   ========================================================================== */
-.about-intro-container {
-    display: flex;
-    gap: 60px;
-    align-items: flex-start;
-    margin-bottom: 120px;
-}
-
-.founders-container {
-    display: flex;
-    gap: 80px;
-}
-
-.founder-card {
-    flex: 1;
-}
-
-/* ==========================================================================
-   7. CONTACT SAYFASI
-   ========================================================================== */
-.contact-container {
-    padding: 90px 10%;
-    min-height: 65vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.contact-form-wrapper {
-    width: 48%;
-}
-
-.contact-logo-wrapper {
-    width: 42%;
-    text-align: right;
-    padding-top: 30px;
-}
-
-.form-group {
-    margin-bottom: 30px;
-}
-
-.form-group label {
-    display: block;
-    font-size: 14px;
-    margin-bottom: 8px;
-}
-
-.form-row {
-    display: flex;
-    gap: 25px;
-}
-
-.form-row .form-group {
-    flex: 1;
-}
-
-input[type="text"], input[type="email"], textarea {
-    width: 100%;
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid #ffffff;
-    color: #ffffff;
-    padding: 12px 0;
-    font-size: 14px;
-    outline: none;
-}
-
-textarea {
-    resize: vertical;
-    min-height: 100px;
-}
-
-.btn-send {
-    background-color: #ffffff;
-    color: #000000;
-    border: none;
-    padding: 12px 35px;
-    border-radius: 25px;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 12px;
-    letter-spacing: 1.5px;
-    transition: background-color 0.2s, color 0.2s;
-}
-
-.btn-send:hover {
-    background-color: #cccccc;
-}
-
-/* ==========================================================================
-   8. PROJE DETAY SAYFASI
-   ========================================================================== */
-.project-hero-cover {
-    width: 100% !important;
-    height: auto !important;
-    margin: 0 0 60px 0 !important;
-    padding: 0 !important;
-    background-color: #000000;
-}
-
-.project-hero-cover img {
-    width: 100% !important;
-    height: auto !important;
-    max-width: 100% !important;
-    display: block !important;
-}
-
-.project-detail-container {
-    padding: 40px 8%;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.project-header-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 40px;
-    border: 1px solid #333333;
-    padding: 40px;
-    margin-bottom: 50px;
-    background-color: #050505;
-}
-
-.project-left-col h1 {
-    font-size: 26px;
-    font-weight: 500;
-    line-height: 1.3;
-    margin-bottom: 25px;
-    letter-spacing: -0.5px;
-}
-
-.project-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 35px;
-}
-
-.tag-box {
-    border: 1px solid #ffffff;
-    padding: 6px 14px;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    opacity: 0.9;
-}
-
-.team-list-section {
-    font-size: 13px;
-    line-height: 1.8;
-    color: #cccccc;
-}
-
-.team-list-section h4 {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #888888;
-    margin-bottom: 6px;
-    margin-top: 20px;
-}
-
-.team-list-section h4:first-child {
-    margin-top: 0;
-}
-
-.project-specs-table {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    justify-content: center;
-}
-
-.spec-row {
-    display: grid;
-    grid-template-columns: 180px 1fr;
-    align-items: baseline;
-    border-bottom: 1px solid #1a1a1a;
-    padding-bottom: 10px;
-    font-size: 13px;
-}
-
-.spec-label {
-    text-transform: uppercase;
-    font-size: 11px;
-    letter-spacing: 1.5px;
-    color: #888888;
-}
-
-.spec-value {
-    color: #ffffff;
-    font-size: 14px;
-    line-height: 1.4;
-}
-
-.intro-section {
-    margin-bottom: 30px;
-}
-
-.intro-title {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #888888;
-    margin-bottom: 12px;
-}
-
-.intro-box {
-    border: 1px solid #333333;
-    padding: 35px;
-    position: relative;
-    background-color: #050505;
-}
-
-.intro-content {
-    font-size: 14px;
-    line-height: 1.8;
-    color: #dddddd;
-    max-height: 120px;
-    overflow: hidden;
-    transition: max-height 0.5s ease-in-out;
-}
-
-.intro-box.expanded .intro-content {
-    max-height: 3000px;
-}
-
-.intro-toggle-btn {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    width: 34px;
-    height: 34px;
-    border: 1px solid #ffffff;
-    background: #000000;
-    color: #ffffff;
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    user-select: none;
-    transition: background 0.2s, color 0.2s;
-}
-
-.intro-toggle-btn:hover {
-    background: #ffffff;
-    color: #000000;
-}
-
-.project-galleries-white-section {
-    background-color: #ffffff;
-    color: #000000;
-    width: 100%;
-    padding-top: 60px;
-    padding-bottom: 20px;
-}
-
-.gallery-category-section {
-    margin-bottom: 80px;
-}
-
-.category-header-clean {
-    margin-bottom: 20px;
-}
-
-.category-header-clean .category-title {
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #000000;
-    font-weight: bold;
-}
-
-.bark-slider-wrapper {
-    width: 100%;
-    height: 650px;
-    display: block;
-    position: relative;
-    overflow: hidden;
-    background-color: #ffffff;
-}
-
-.bark-slider-wrapper img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: contain !important;
-    cursor: pointer;
-    display: block;
-    margin: 0 auto;
-    transition: opacity 0.2s ease;
-    user-select: none;
-}
-
-.bark-slider-wrapper img:hover {
-    opacity: 0.92;
-}
-
-.project-galleries-white-section .project-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 40px;
-    border-top: 1px solid #e0e0e0;
-}
-
-.project-galleries-white-section .project-nav a {
-    color: #000000;
-    text-decoration: none;
-    font-size: 13px;
-    opacity: 0.75;
-    transition: opacity 0.2s;
-}
-
-.project-galleries-white-section .project-nav a:hover {
-    opacity: 1;
-    text-decoration: underline;
-}
-
-/* --- GÖRSEL VE VİDEO KOPYALAMA / SÜRÜKLEME KORUMASI --- */
-img, video {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-user-drag: none;
-    pointer-events: auto;
-}
-
-/* --- ANASAYFA ÖZEL FOOTER (SİYAH ARKA PLAN) --- */
-footer.home-footer {
-    background-color: #000000 !important;
-    color: #ffffff !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
-    position: relative;
-    z-index: 10;
-}
-
-footer.home-footer .footer-copy {
-    color: #aaaaaa !important;
-    border-bottom: 1px solid #555555 !important;
-}
-
-footer.home-footer .footer-right a {
-    color: #ffffff !important;
-}
-
-footer.home-footer .footer-right a:hover {
-    opacity: 0.7;
-}
-
-/* --- SAYFALAR ARASI YUMUŞAK GEÇİŞ --- */
-@keyframes pageFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(4px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-body {
-    animation: pageFadeIn 0.4s ease-in-out forwards;
-}
-
-/* ==========================================================================
-   MOBİL UYUM (RESPONSIVE)
-   ========================================================================== */
-@media (max-width: 900px) {
-    .project-header-grid {
-        grid-template-columns: 1fr;
-        padding: 25px;
+.project-info h3 {
+        font-size: 15px;
+        font-weight: bold;
+        margin-bottom: 4px;
     }
 
-    .spec-row {
-        grid-template-columns: 130px 1fr;
-    }
-}
-
-@media (max-width: 768px) {
-    header {
-        padding: 15px 20px !important;
-        flex-direction: row !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        gap: 0 !important;
+    .project-info p {
+        font-size: 12px;
+        opacity: 0.6;
     }
 
-    .nav-logo img {
-        height: 48px !important;
-        width: auto !important;
-        margin: 0 !important;
-    }
-
-    nav {
-        display: flex !important;
-        gap: 12px !important;
-    }
-
-    nav a {
-        margin-left: 0 !important;
-        font-size: 12px !important;
-        letter-spacing: 0.2px !important;
-    }
-
-    footer {
-        padding: 20px;
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-    }
-    
-    .footer-logo img {
-        margin: 0 auto;
-    }
-
-    .project-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .project-hero-cover {
-        margin-bottom: 30px !important;
-    }
-
-    .project-detail-container {
-        padding: 30px 5%;
-    }
-
-    .project-left-col h1 {
-        font-size: 22px;
-    }
-
-    .bark-slider-wrapper {
-        height: 380px;
-    }
-
-    .category-header-clean .category-title {
-        font-size: 11px;
+    /* ==========================================================================
+       6. ABOUT SAYFASI
+       ========================================================================== */
+    .about-intro-container {
+        display: flex;
+        gap: 60px;
+        align-items: flex-start;
+        margin-bottom: 120px;
     }
 
     .founders-container {
-        flex-direction: column !important;
-        gap: 50px !important;
+        display: flex;
+        gap: 80px;
     }
 
+    .founder-card {
+        flex: 1;
+    }
+
+    /* ==========================================================================
+       7. CONTACT SAYFASI
+       ========================================================================== */
     .contact-container {
-        padding: 40px 5% !important;
-        flex-direction: column !important;
-        align-items: stretch !important;
-        gap: 40px !important;
+        padding: 90px 10%;
+        min-height: 65vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
     }
 
     .contact-form-wrapper {
-        width: 100% !important;
+        width: 48%;
     }
 
     .contact-logo-wrapper {
-        width: 100% !important;
-        text-align: left !important;
-        padding-top: 0 !important;
+        width: 42%;
+        text-align: right;
+        padding-top: 30px;
     }
 
-    .contact-logo-wrapper img {
-        max-width: 140px !important;
-        height: auto !important;
+    .form-group {
+        margin-bottom: 30px;
+    }
+
+    .form-group label {
+        display: block;
+        font-size: 14px;
+        margin-bottom: 8px;
     }
 
     .form-row {
-        flex-direction: column !important;
-        gap: 0 !important;
+        display: flex;
+        gap: 25px;
     }
 
-    body.home-page .home-fullscreen-video-bg video {
-        width: 100vw !important;
-        height: 100vh !important;
+    .form-row .form-group {
+        flex: 1;
+    }
+
+    input[type="text"], input[type="email"], textarea {
+        width: 100%;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid #ffffff;
+        color: #ffffff;
+        padding: 12px 0;
+        font-size: 14px;
+        outline: none;
+    }
+
+    textarea {
+        resize: vertical;
+        min-height: 100px;
+    }
+
+    .btn-send {
+        background-color: #ffffff;
+        color: #000000;
+        border: none;
+        padding: 12px 35px;
+        border-radius: 25px;
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 12px;
+        letter-spacing: 1.5px;
+        transition: background-color 0.2s, color 0.2s;
+    }
+
+    .btn-send:hover {
+        background-color: #cccccc;
+    }
+
+    /* ==========================================================================
+       8. PROJE DETAY SAYFASI
+       ========================================================================== */
+    .project-hero-cover {
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 0 60px 0 !important;
+        padding: 0 !important;
+        background-color: #000000;
+    }
+
+    .project-hero-cover img {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100% !important;
+        display: block !important;
+    }
+
+    .project-detail-container {
+        padding: 40px 8%;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .project-header-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 40px;
+        border: 1px solid #333333;
+        padding: 40px;
+        margin-bottom: 50px;
+        background-color: #050505;
+    }
+
+    .project-left-col h1 {
+        font-size: 26px;
+        font-weight: 500;
+        line-height: 1.3;
+        margin-bottom: 25px;
+        letter-spacing: -0.5px;
+    }
+
+    .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 35px;
+    }
+
+    .tag-box {
+        border: 1px solid #ffffff;
+        padding: 6px 14px;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        opacity: 0.9;
+    }
+
+    .team-list-section {
+        font-size: 13px;
+        line-height: 1.8;
+        color: #cccccc;
+    }
+
+    .team-list-section h4 {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #888888;
+        margin-bottom: 6px;
+        margin-top: 20px;
+    }
+
+    .team-list-section h4:first-child {
+        margin-top: 0;
+    }
+
+    .project-specs-table {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        justify-content: center;
+    }
+
+    .spec-row {
+        display: grid;
+        grid-template-columns: 180px 1fr;
+        align-items: baseline;
+        border-bottom: 1px solid #1a1a1a;
+        padding-bottom: 10px;
+        font-size: 13px;
+    }
+
+    .spec-label {
+        text-transform: uppercase;
+        font-size: 11px;
+        letter-spacing: 1.5px;
+        color: #888888;
+    }
+
+    .spec-value {
+        color: #ffffff;
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    .intro-section {
+        margin-bottom: 30px;
+    }
+
+    .intro-title {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #888888;
+        margin-bottom: 12px;
+    }
+
+    .intro-box {
+        border: 1px solid #333333;
+        padding: 35px;
+        position: relative;
+        background-color: #050505;
+    }
+
+    .intro-content {
+        font-size: 14px;
+        line-height: 1.8;
+        color: #dddddd;
+        max-height: 120px;
+        overflow: hidden;
+        transition: max-height 0.5s ease-in-out;
+    }
+
+    .intro-box.expanded .intro-content {
+        max-height: 3000px;
+    }
+
+    .intro-toggle-btn {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        width: 34px;
+        height: 34px;
+        border: 1px solid #ffffff;
+        background: #000000;
+        color: #ffffff;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        user-select: none;
+        transition: background 0.2s, color 0.2s;
+    }
+
+    .intro-toggle-btn:hover {
+        background: #ffffff;
+        color: #000000;
+    }
+
+    .project-galleries-white-section {
+        background-color: #ffffff;
+        color: #000000;
+        width: 100%;
+        padding-top: 60px;
+        padding-bottom: 20px;
+    }
+
+    .gallery-category-section {
+        margin-bottom: 80px;
+    }
+
+    .category-header-clean {
+        margin-bottom: 20px;
+    }
+
+    .category-header-clean .category-title {
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #000000;
+        font-weight: bold;
+    }
+
+    .bark-slider-wrapper {
+        width: 100%;
+        height: 650px;
+        display: block;
+        position: relative;
+        overflow: hidden;
+        background-color: #ffffff;
+    }
+
+    .bark-slider-wrapper img {
+        width: 100% !important;
+        height: 100% !important;
         object-fit: contain !important;
-        transform: scale(1) !important;
+        cursor: pointer;
+        display: block;
+        margin: 0 auto;
+        transition: opacity 0.2s ease;
+        user-select: none;
+    }
+
+    .bark-slider-wrapper img:hover {
+        opacity: 0.92;
+    }
+
+    .project-galleries-white-section .project-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 40px;
+        border-top: 1px solid #e0e0e0;
+    }
+
+    .project-galleries-white-section .project-nav a {
+        color: #000000;
+        text-decoration: none;
+        font-size: 13px;
+        opacity: 0.75;
+        transition: opacity 0.2s;
+    }
+
+    .project-galleries-white-section .project-nav a:hover {
+        opacity: 1;
+        text-decoration: underline;
+    }
+
+    /* --- GÖRSEL VE VİDEO KOPYALAMA / SÜRÜKLEME KORUMASI --- */
+    img, video {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-user-drag: none;
+        pointer-events: auto;
+    }
+
+    /* --- SAYFALAR ARASI YUMUŞAK GEÇİŞ --- */
+    @keyframes pageFadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(4px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    body {
+        animation: pageFadeIn 0.4s ease-in-out forwards;
+    }
+
+    /* ==========================================================================
+       MOBİL UYUM (RESPONSIVE)
+       ========================================================================== */
+    @media (max-width: 900px) {
+        .project-header-grid {
+            grid-template-columns: 1fr;
+            padding: 25px;
+        }
+
+        .spec-row {
+            grid-template-columns: 130px 1fr;
+        }
+    }
+
+    @media (max-width: 768px) {
+        header {
+            padding: 15px 20px !important;
+            flex-direction: row !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            gap: 0 !important;
+        }
+
+        .nav-logo img {
+            height: 48px !important;
+            width: auto !important;
+            margin: 0 !important;
+        }
+
+        nav {
+            display: flex !important;
+            gap: 12px !important;
+        }
+
+        nav a {
+            margin-left: 0 !important;
+            font-size: 12px !important;
+            letter-spacing: 0.2px !important;
+        }
+
+        footer {
+            padding: 20px;
+            flex-direction: column;
+            gap: 15px;
+            text-align: center;
+        }
+        
+        .footer-logo img {
+            margin: 0 auto;
+        }
+
+        .project-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .project-hero-cover {
+            margin-bottom: 30px !important;
+        }
+
+        .project-detail-container {
+            padding: 30px 5%;
+        }
+
+        .project-left-col h1 {
+            font-size: 22px;
+        }
+
+        .bark-slider-wrapper {
+            height: 380px;
+        }
+
+        .category-header-clean .category-title {
+            font-size: 11px;
+        }
+
+        .founders-container {
+            flex-direction: column !important;
+            gap: 50px !important;
+        }
+
+        .contact-container {
+            padding: 40px 5% !important;
+            flex-direction: column !important;
+            align-items: stretch !important;
+            gap: 40px !important;
+        }
+
+        .contact-form-wrapper {
+            width: 100% !important;
+        }
+
+        .contact-logo-wrapper {
+            width: 100% !important;
+            text-align: left !important;
+            padding-top: 0 !important;
+        }
+
+        .contact-logo-wrapper img {
+            max-width: 140px !important;
+            height: auto !important;
+        }
+
+        .form-row {
+            flex-direction: column !important;
+            gap: 0 !important;
+        }
+
+        body.home-page .home-fullscreen-video-bg video {
+            width: 100vw !important;
+            height: 100vh !important;
+            object-fit: contain !important;
+            transform: scale(1) !important;
+        }
     }
 }
