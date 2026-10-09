@@ -15,7 +15,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     overflow-x: hidden;
-    overflow-y: scroll; /* Kaydırma çubuğunu sabitleyerek sayfalar arası kaymayı engeller */
+    overflow-y: scroll;
 }
 
 main {
@@ -34,7 +34,7 @@ main {
 }
 
 /* ==========================================================================
-   2. NAVİGASYON / HEADER (DİĞER SAYFALAR İÇİN - SABİT VE DÜZGÜN HİZALI)
+   2. NAVİGASYON / HEADER (DİĞER SAYFALAR İÇİN)
    ========================================================================== */
 header {
     background-color: #000000;
@@ -113,14 +113,13 @@ footer {
 }
 
 /* ==========================================================================
-   4. HOME SAYFASI ÖZEL (TRANSPARAN ÜST ŞERİT VE NET, SİYAH-BEYAZ VİDEO)
+   4. HOME SAYFASI ÖZEL & İNTRO LOGO ANİMASYONU
    ========================================================================== */
 body.home-page {
     position: relative;
     background-color: #000000;
 }
 
-/* Sadece anasayfada header en üstte, transparan ve videonun üzerinde yer alır */
 body.home-page header {
     position: absolute !important;
     top: 0 !important;
@@ -132,7 +131,7 @@ body.home-page header {
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Tam ekran arka plan video katmanı (Sadece anasayfa) */
+/* Tam ekran arka plan video katmanı */
 body.home-page .home-fullscreen-video-bg {
     position: fixed;
     top: 0;
@@ -149,12 +148,10 @@ body.home-page .home-fullscreen-video-bg video {
     height: 100%;
     object-fit: cover;
     object-position: center;
-    /* Net, yüksek kontrastlı, tamamen siyah-beyaz (grenli sinematik doku) */
     filter: grayscale(100%) contrast(1.45) brightness(0.65) saturate(0);
     transform: scale(1.02);
 }
 
-/* Videonun üzerindeki hafif tül katmanı */
 body.home-page .home-video-overlay {
     position: fixed;
     top: 0;
@@ -166,7 +163,6 @@ body.home-page .home-video-overlay {
     pointer-events: none;
 }
 
-/* Anasayfa main alanı (Girişte videonun tam 100vh kaplamasını sağlar, aşağı kaydırınca footer görünür) */
 body.home-page main {
     height: 100vh;
     display: flex;
@@ -174,6 +170,53 @@ body.home-page main {
     justify-content: center;
     position: relative;
     z-index: 1;
+}
+
+/* BIG Tarzı Ortadan Sol Üste Giden Logo Animasyonu */
+.intro-logo-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    animation: fadeOutBg 0.4s ease 1.1s forwards;
+    pointer-events: none;
+}
+
+.intro-logo-overlay img {
+    height: 110px;
+    width: auto;
+    animation: moveToCorner 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+@keyframes moveToCorner {
+    0% {
+        transform: translate(0, 0) scale(1.8);
+        opacity: 1;
+    }
+    60% {
+        opacity: 1;
+    }
+    100% {
+        /* Sol üst header'daki konumuna ve boyutuna (76px) hassas geçiş */
+        transform: translate(calc(-50vw + 60px + 75px), calc(-50vh + 30px + 38px)) scale(0.69);
+        opacity: 0; /* Header'daki gerçek logo belirdiği an kaybolur */
+    }
+}
+
+@keyframes fadeOutBg {
+    0% {
+        background-color: rgba(0, 0, 0, 0.85);
+    }
+    100% {
+        background-color: rgba(0, 0, 0, 0);
+        visibility: hidden;
+    }
 }
 
 /* ==========================================================================
@@ -207,7 +250,6 @@ body.home-page main {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Varsayılan olarak siyah-beyaz ve hafif soluk */
     filter: grayscale(100%) brightness(0.9);
     transition: transform 0.4s ease, filter 0.4s ease, opacity 0.4s ease;
     opacity: 0.85;
@@ -215,7 +257,6 @@ body.home-page main {
 
 .project-card:hover img {
     transform: scale(1.03);
-    /* Mouse üzerine gelince renkli ve net hale gelir */
     filter: grayscale(0%) brightness(1);
     opacity: 1;
 }
@@ -548,4 +589,172 @@ textarea {
     transition: opacity 0.2s;
 }
 
-.project-galleries-
+.project-galleries-white-section .project-nav a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* --- GÖRSEL VE VİDEO KOPYALAMA / SÜRÜKLEME KORUMASI --- */
+img, video {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    pointer-events: auto;
+}
+
+/* --- ANASAYFA ÖZEL FOOTER (SİYAH ARKA PLAN) --- */
+footer.home-footer {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    position: relative;
+    z-index: 10;
+}
+
+footer.home-footer .footer-copy {
+    color: #aaaaaa !important;
+    border-bottom: 1px solid #555555 !important;
+}
+
+footer.home-footer .footer-right a {
+    color: #ffffff !important;
+}
+
+footer.home-footer .footer-right a:hover {
+    opacity: 0.7;
+}
+
+/* --- SAYFALAR ARASI YUMUŞAK GEÇİŞ (FADE-IN EFEKTİ) --- */
+@keyframes pageFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body {
+    animation: pageFadeIn 0.4s ease-in-out forwards;
+}
+
+/* ==========================================================================
+   MOBİL UYUM (RESPONSIVE)
+   ========================================================================== */
+@media (max-width: 900px) {
+    .project-header-grid {
+        grid-template-columns: 1fr;
+        padding: 25px;
+    }
+
+    .spec-row {
+        grid-template-columns: 130px 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        gap: 0 !important;
+    }
+
+    .nav-logo img {
+        height: 48px !important;
+        width: auto !important;
+        margin: 0 !important;
+    }
+
+    nav {
+        display: flex !important;
+        gap: 12px !important;
+    }
+
+    nav a {
+        margin-left: 0 !important;
+        font-size: 12px !important;
+        letter-spacing: 0.2px !important;
+    }
+
+    footer {
+        padding: 20px;
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .footer-logo img {
+        margin: 0 auto;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-hero-cover {
+        margin-bottom: 30px !important;
+    }
+
+    .project-detail-container {
+        padding: 30px 5%;
+    }
+
+    .project-left-col h1 {
+        font-size: 22px;
+    }
+
+    .bark-slider-wrapper {
+        height: 380px;
+    }
+
+    .category-header-clean .category-title {
+        font-size: 11px;
+    }
+
+    .founders-container {
+        flex-direction: column !important;
+        gap: 50px !important;
+    }
+
+    /* Mobil Contact Sayfası Taşma Düzeltmesi */
+    .contact-container {
+        padding: 40px 5% !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 40px !important;
+    }
+
+    .contact-form-wrapper {
+        width: 100% !important;
+    }
+
+    .contact-logo-wrapper {
+        width: 100% !important;
+        text-align: left !important;
+        padding-top: 0 !important;
+    }
+
+    .contact-logo-wrapper img {
+        max-width: 140px !important;
+        height: auto !important;
+    }
+
+    .form-row {
+        flex-direction: column !important;
+        gap: 0 !important;
+    }
+
+    /* Mobil Anasayfa Video Sığdırma */
+    body.home-page .home-fullscreen-video-bg video {
+        width: 100vw !important;
+        height: 100vh !important;
+        object-fit: contain !important;
+        transform: scale(1) !important;
+    }
+}
