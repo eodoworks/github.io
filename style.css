@@ -74,7 +74,7 @@ nav a:hover, nav a.active {
 }
 
 /* ==========================================================================
-   3. ALT BİLGİ / FOOTER (NORMAL SAYFALAR İÇİN)
+   3. ALT BİLGİ / FOOTER (NORMAL SAYFALAR İÇİN - BEYAZ)
    ========================================================================== */
 footer {
     background-color: #ffffff;
@@ -174,29 +174,36 @@ body.home-page .home-main-spacer {
     width: 100vw;
 }
 
-/* Anasayfa özel siyah footer */
+/* ==========================================================================
+   5. HOME VE ABOUT SAYFASI ÖZEL FOOTER (SİYAH)
+   ========================================================================== */
+footer.home-footer {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    width: 100%;
+    margin-top: auto;
+    position: relative;
+    z-index: 10;
+}
+
 body.home-page footer.home-footer {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
-    background-color: #000000 !important;
-    color: #ffffff !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
-    z-index: 10;
     margin-top: 0 !important;
 }
 
-body.home-page footer.home-footer .footer-copy {
+footer.home-footer .footer-copy {
     color: #aaaaaa !important;
     border-bottom: 1px solid #555555 !important;
 }
 
-body.home-page footer.home-footer .footer-right a {
+footer.home-footer .footer-right a {
     color: #ffffff !important;
 }
 
-body.home-page footer.home-footer .footer-right a:hover {
+footer.home-footer .footer-right a:hover {
     opacity: 0.7;
 }
 
@@ -247,7 +254,7 @@ body.home-page footer.home-footer .footer-right a:hover {
 }
 
 /* ==========================================================================
-   5. WORKS SAYFASI
+   6. WORKS SAYFASI
    ========================================================================== */
 .project-grid {
     display: grid;
@@ -300,7 +307,7 @@ body.home-page footer.home-footer .footer-right a:hover {
 }
 
 /* ==========================================================================
-   6. ABOUT SAYFASI
+   7. ABOUT SAYFASI
    ========================================================================== */
 .about-intro-container {
     display: flex;
@@ -319,7 +326,7 @@ body.home-page footer.home-footer .footer-right a:hover {
 }
 
 /* ==========================================================================
-   7. CONTACT SAYFASI
+   8. CONTACT SAYFASI
    ========================================================================== */
 .contact-container {
     padding: 90px 10%;
@@ -392,7 +399,7 @@ textarea {
 }
 
 /* ==========================================================================
-   8. PROJE DETAY SAYFASI
+   9. PROJE DETAY SAYFASI
    ========================================================================== */
 .project-hero-cover {
     width: 100% !important;
