@@ -13,6 +13,71 @@
     <meta property="og:type" content="website">
 
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Anasayfa için özel akış ve kaydırma mimarisi */
+        body.home-page {
+            height: 150vh; /* Sayfanın aşağı kaydırılabilir olmasını sağlar */
+            overflow-y: scroll;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Video arka planda tamamen sabit kalır */
+        body.home-page .home-fullscreen-video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -2;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        body.home-page .home-fullscreen-video-bg video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            filter: grayscale(100%) contrast(1.45) brightness(0.65) saturate(0);
+            transform: scale(1.02);
+        }
+
+        body.home-page .home-video-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.35);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Header üstte sabit kalır */
+        body.home-page header {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            background-color: rgba(0, 0, 0, 0.35) !important;
+            backdrop-filter: blur(6px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* Footer sayfanın en altında (150vh'in dibinde) konumlanır, aşağı kaydırınca görünür */
+        body.home-page footer.home-footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #000000 !important;
+            color: #ffffff !important;
+            border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+            z-index: 10;
+        }
+    </style>
 </head>
 <script>
     // Sağ tık ve sürükleme koruması
@@ -53,7 +118,8 @@
         </nav>
     </header>
 
-    <main class="home-main-spacer">
+    <main style="height: 100vh;">
+        <!-- İlk ekranda boşluk -->
     </main>
 
     <!-- Aşağı Kaydırınca Görünen Siyah Footer Şeridi -->
