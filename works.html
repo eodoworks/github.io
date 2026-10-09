@@ -3,25 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>eodo — Architecture, Design, Research, Urbanism</title>
-    <meta name="description" content="eodo is an independent architectural and design practice based in Istanbul and Paris, founded by Emre Eren Özaşık and Öykü Çimoğlu.">
-    <meta name="keywords" content="eodo, eodoworks, eodo works, mimarlık pratiği, architecture practice, istanbul, paris, emre eren özaşık, öykü çimoğlu">
-    
-    <!-- Google ve Sosyal Medya Önizleme Etiketleri -->
-    <meta property="og:title" content="eodo — Architecture & Design Practice">
-    <meta property="og:description" content="Independent architectural and design practice operating across Istanbul and Paris.">
-    <meta property="og:url" content="https://eodoworks.com/">
-    <meta property="og:type" content="website">
-
+    <title>Works — eodo</title>
+    <meta name="description" content="Explore architectural works and competition projects by eodo.">
     <link rel="stylesheet" href="style.css">
 </head>
-    <script>
+<script>
     // Sağ tık menüsünü engelleme
     document.addEventListener('contextmenu', function(e) {
         e.preventDefault();
     });
 
-    // Klavye üzerinden görsel sürükleme veya kaydetme kısayollarını engelleme
+    // Görsel sürüklemeyi engelleme
     document.addEventListener('dragstart', function(e) {
         if (e.target.nodeName === 'IMG' || e.target.nodeName === 'VIDEO') {
             e.preventDefault();
@@ -32,7 +24,7 @@
 
     <header>
         <a href="index.html" class="nav-logo">
-            <img src="logo-white.png" alt="eodo">
+            <img src="logo-black.png" alt="eodo" id="nav-logo-img">
         </a>
         <nav>
             <a href="index.html">Home</a>
@@ -42,45 +34,65 @@
         </nav>
     </header>
 
-    <main class="bg-black" style="padding: 80px 10%; min-height: 70vh;">
-        
+    <main style="padding: 90px 8%;">
         <div class="project-grid">
 
-            <!-- PROJE 1: Muğla Sosyal, Kültürel ve İdari Hizmetler Binası (Tıklanabilir) -->
-            <a href="mugla-sosyal-idari-bina.html" class="project-card">
-                <div class="img-wrapper">
-                    <img src="projects/mugla/cover.jpg" alt="Muğla Büyükşehir Belediyesi Sosyal, Kültürel ve İdari Hizmetler Binası">
-                </div>
-                <div class="project-info">
-                    <h3>Muğla Büyükşehir Belediyesi Sosyal, Kültürel ve İdari Hizmetler Binası</h3>
-                    <p>Architectural Competition / Muğla, 2026</p>
-                </div>
-            </a>
-
-            <!-- PROJE 2: İKSO (Henüz Tıklanamaz - Sadece Kapak) -->
+            <!-- Central University Library in Podgorica -->
             <div class="project-card" style="cursor: default;">
                 <div class="img-wrapper">
-                    <img src="ikso-cover.jpg" alt="İKSO">
+                    <img src="podgorica-library.jpg" alt="Central University Library in Podgorica">
+                </div>
+                <div class="project-info">
+                    <h3>Central University Library in Podgorica</h3>
+                    <p>2025, Montenegro — Architectural Competition w/ BUDA Architecture</p>
+                </div>
+            </div>
+
+            <!-- İKSO (Tıklanamaz) -->
+            <div class="project-card" style="cursor: default;">
+                <div class="img-wrapper">
+                    <img src="ikso.jpg" alt="İKSO">
                 </div>
                 <div class="project-info">
                     <h3>İKSO</h3>
-                    <p>Architectural Competition / Istanbul, 2023</p>
+                    <p>2023, Istanbul — Architectural Competition</p>
                 </div>
             </div>
 
-            <!-- PROJE 3: White Cliff Visitor Center (Henüz Tıklanamaz - Sadece Kapak) -->
+            <!-- White Cliff Visitor Center (Tıklanamaz) -->
             <div class="project-card" style="cursor: default;">
                 <div class="img-wrapper">
-                    <img src="whitecliff-cover.jpg" alt="White Cliff Visitor Center">
+                    <img src="white-cliff.jpg" alt="White Cliff Visitor Center">
                 </div>
                 <div class="project-info">
                     <h3>White Cliff Visitor Center</h3>
-                    <p>Architectural Competition / United Kingdom, 2024</p>
+                    <p>2024, United Kingdom — Architectural Competition</p>
                 </div>
             </div>
 
-        </div>
+            <!-- Muğla Büyükşehir Belediyesi Projesi (Tıklanabilir Örnek) -->
+            <a href="mugla-project.html" class="project-card">
+                <div class="img-wrapper">
+                    <img src="mugla-cover.jpg" alt="Muğla Büyükşehir Belediyesi">
+                </div>
+                <div class="project-info">
+                    <h3>Muğla Büyükşehir Belediyesi Sosyal, Kültürel ve İdari Hizmetler Binası</h3>
+                    <p>2026, Muğla — Architectural Competition</p>
+                </div>
+            </a>
 
+            <!-- Kayabaşı Polis Evi Projesi (Tıklanabilir Örnek) -->
+            <a href="kayabasi-project.html" class="project-card">
+                <div class="img-wrapper">
+                    <img src="kayabasi-cover.jpg" alt="Kayabaşı Polis Evi">
+                </div>
+                <div class="project-info">
+                    <h3>Kayabaşı Polis Evi</h3>
+                    <p>2026, Istanbul — Architectural Design</p>
+                </div>
+            </a>
+
+        </div>
     </main>
 
     <footer>
