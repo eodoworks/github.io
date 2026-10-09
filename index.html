@@ -53,8 +53,7 @@
         </nav>
     </header>
 
-    <!-- Tam ekranı dolduran ana alan -->
-    <main id="home-main">
+    <main class="home-main-spacer">
     </main>
 
     <!-- Aşağı Kaydırınca Görünen Siyah Footer Şeridi -->
@@ -74,17 +73,5 @@
         </div>
     </footer>
 
-    <script>
-        // Sayfa yüksekliğini net hesaplayıp main alanını ekrana tam oturtan JavaScript
-        function adjustHomeHeight() {
-            const winHeight = window.innerHeight;
-            const mainEl = document.getElementById('home-main');
-            if (mainEl) {
-                mainEl.style.height = winHeight + 'px';
-            }
-        }
-        window.addEventListener('resize', adjustHomeHeight);
-        window.addEventListener('DOMContentLoaded', adjustHomeHeight);
-    </script>
 </body>
 </html>
