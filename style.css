@@ -118,6 +118,7 @@ footer {
 body.home-page {
     position: relative;
     background-color: #000000;
+    min-height: 100vh;
 }
 
 body.home-page header {
@@ -163,11 +164,10 @@ body.home-page .home-video-overlay {
     pointer-events: none;
 }
 
+/* Anasayfa main alanı: Tam olarak 100vh yapar, böylece ilk ekranda footer görünmez, aşağı kaydırınca çıkar */
 body.home-page main {
     height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100vw;
     position: relative;
     z-index: 1;
 }
@@ -203,9 +203,8 @@ body.home-page main {
         opacity: 1;
     }
     100% {
-        /* Sol üst header'daki konumuna ve boyutuna (76px) hassas geçiş */
         transform: translate(calc(-50vw + 60px + 75px), calc(-50vh + 30px + 38px)) scale(0.69);
-        opacity: 0; /* Header'daki gerçek logo belirdiği an kaybolur */
+        opacity: 0;
     }
 }
 
@@ -722,7 +721,6 @@ body {
         gap: 50px !important;
     }
 
-    /* Mobil Contact Sayfası Taşma Düzeltmesi */
     .contact-container {
         padding: 40px 5% !important;
         flex-direction: column !important;
@@ -750,7 +748,6 @@ body {
         gap: 0 !important;
     }
 
-    /* Mobil Anasayfa Video Sığdırma */
     body.home-page .home-fullscreen-video-bg video {
         width: 100vw !important;
         height: 100vh !important;
