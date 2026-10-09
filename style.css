@@ -70,7 +70,7 @@ nav a:hover, nav a.active {
 }
 
 /* ==========================================================================
-   3. ALT BİLGİ / FOOTER
+   3. ALT BİLGİ / FOOTER (GENEL & BEYAZ SAYFALAR İÇİN)
    ========================================================================== */
 footer {
     background-color: #ffffff;
@@ -151,7 +151,7 @@ body.home-page .home-fullscreen-video-bg video {
     object-position: center;
     /* Net, yüksek kontrastlı, tamamen siyah-beyaz ve grenli sinematik doku */
     filter: grayscale(100%) contrast(1.45) brightness(0.65) saturate(0);
-    transform: scale(0.92); /* Zoom biraz geri çekilerek ekrana ferah sığdırıldı */
+    transform: scale(1.02);
 }
 
 /* Videonun üzerindeki hafif tül katmanı */
@@ -554,26 +554,8 @@ textarea {
 }
 
 /* ==========================================================================
-   9. MOBİL UYUM (RESPONSIVE)
+   9. ANASAYFA VE ABOUT ÖZEL SİYAH FOOTER
    ========================================================================== */
-@media (max-width: 900px) {
-    .project-header-grid {
-        grid-template-columns: 1fr;
-        padding: 25px;
-    }
-
-    .spec-row {
-        grid-template-columns: 130px 1fr;
-    }
-}
-
-@media (max-width: 768px) {
-    header {
-        padding: 15px 20px !important;
-        flex-direction: row !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-/* --- ANASAYFA VE ABOUT ÖZEL SİYAH FOOTER --- */
 footer.home-footer {
     background-color: #000000 !important;
     color: #ffffff !important;
@@ -593,4 +575,148 @@ footer.home-footer .footer-right a {
 
 footer.home-footer .footer-right a:hover {
     opacity: 0.7;
+}
+
+/* ==========================================================================
+   10. GÖRSEL / VİDEO KORUMASI & DİĞER EFEKTLER
+   ========================================================================== */
+img, video {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    pointer-events: auto;
+}
+
+@keyframes pageFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body {
+    animation: pageFadeIn 0.4s ease-in-out forwards;
+}
+
+/* ==========================================================================
+   11. MOBİL UYUM (RESPONSIVE)
+   ========================================================================== */
+@media (max-width: 900px) {
+    .project-header-grid {
+        grid-template-columns: 1fr;
+        padding: 25px;
+    }
+
+    .spec-row {
+        grid-template-columns: 130px 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        gap: 0 !important;
+    }
+
+    .nav-logo img {
+        height: 48px !important;
+        width: auto !important;
+        margin: 0 !important;
+    }
+
+    nav {
+        display: flex !important;
+        gap: 12px !important;
+    }
+
+    nav a {
+        margin-left: 0 !important;
+        font-size: 12px !important;
+        letter-spacing: 0.2px !important;
+    }
+
+    footer {
+        padding: 20px;
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .footer-logo img {
+        margin: 0 auto;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-hero-cover {
+        margin-bottom: 30px !important;
+    }
+
+    .project-detail-container {
+        padding: 30px 5%;
+    }
+
+    .project-left-col h1 {
+        font-size: 22px;
+    }
+
+    .bark-slider-wrapper {
+        height: 380px;
+    }
+
+    .category-header-clean .category-title {
+        font-size: 11px;
+    }
+
+    .founders-container {
+        flex-direction: column !important;
+        gap: 50px !important;
+    }
+
+    /* Mobil Contact Sayfası Taşma Düzeltmesi */
+    .contact-container {
+        padding: 40px 5% !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 40px !important;
+    }
+
+    .contact-form-wrapper {
+        width: 100% !important;
+    }
+
+    .contact-logo-wrapper {
+        width: 100% !important;
+        text-align: left !important;
+        padding-top: 0 !important;
+    }
+
+    .contact-logo-wrapper img {
+        max-width: 140px !important;
+        height: auto !important;
+    }
+
+    .form-row {
+        flex-direction: column !important;
+        gap: 0 !important;
+    }
+
+    /* Mobil Anasayfa Video Sığdırma */
+    body.home-page .home-fullscreen-video-bg video {
+        width: 100vw !important;
+        height: 100vh !important;
+        object-fit: contain !important;
+        transform: scale(1) !important;
+    }
 }
