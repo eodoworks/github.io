@@ -15,12 +15,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <script>
-    // Sağ tık menüsünü engelleme
+    // Sağ tık ve sürükleme koruması
     document.addEventListener('contextmenu', function(e) {
         e.preventDefault();
     });
 
-    // Klavye üzerinden görsel sürükleme veya kaydetme kısayollarını engelleme
     document.addEventListener('dragstart', function(e) {
         if (e.target.nodeName === 'IMG' || e.target.nodeName === 'VIDEO') {
             e.preventDefault();
@@ -54,8 +53,8 @@
         </nav>
     </header>
 
-    <main>
-        <!-- Boş alan, videonun tam ekran kalmasını sağlar -->
+    <!-- Tam ekranı dolduran ana alan -->
+    <main id="home-main">
     </main>
 
     <!-- Aşağı Kaydırınca Görünen Siyah Footer Şeridi -->
@@ -75,5 +74,17 @@
         </div>
     </footer>
 
+    <script>
+        // Sayfa yüksekliğini net hesaplayıp main alanını ekrana tam oturtan JavaScript
+        function adjustHomeHeight() {
+            const winHeight = window.innerHeight;
+            const mainEl = document.getElementById('home-main');
+            if (mainEl) {
+                mainEl.style.height = winHeight + 'px';
+            }
+        }
+        window.addEventListener('resize', adjustHomeHeight);
+        window.addEventListener('DOMContentLoaded', adjustHomeHeight);
+    </script>
 </body>
 </html>
