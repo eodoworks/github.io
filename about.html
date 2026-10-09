@@ -6,18 +6,75 @@
     <title>About — eodo</title>
     <meta name="description" content="Learn about eodo, an independent architectural and design practice based in Istanbul and Paris, founded by Emre Eren Özaşık and Öykü Çimoğlu.">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* About sayfası özel düzgün yerleşim stilleri */
+        .about-main-container {
+            padding: 80px 8%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .about-intro-block {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #cccccc;
+            max-width: 1000px;
+            margin-bottom: 90px;
+        }
+
+        .founders-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .founder-card .img-box {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            background-color: #111;
+            margin-bottom: 25px;
+            overflow: hidden;
+        }
+
+        .founder-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%) brightness(0.9);
+        }
+
+        .founder-name {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 4px;
+            color: #ffffff;
+        }
+
+        .founder-title {
+            font-size: 12px;
+            opacity: 0.6;
+            margin-bottom: 20px;
+        }
+
+        .founder-bio {
+            font-size: 13px;
+            line-height: 1.8;
+            color: #cccccc;
+        }
+
+        @media (max-width: 900px) {
+            .founders-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+        }
+    </style>
 </head>
 <script>
-    // Sağ tık menüsünü engelleme
-    document.addEventListener('contextmenu', function(e) {
-        e.preventDefault();
-    });
-
-    // Görsel sürüklemeyi engelleme
+    document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
     document.addEventListener('dragstart', function(e) {
-        if (e.target.nodeName === 'IMG' || e.target.nodeName === 'VIDEO') {
-            e.preventDefault();
-        }
+        if (e.target.nodeName === 'IMG' || e.target.nodeName === 'VIDEO') { e.preventDefault(); }
     });
 </script>
 <body>
@@ -34,44 +91,45 @@
         </nav>
     </header>
 
-    <main style="padding: 90px 8%;">
-        <div class="about-intro-container">
-            <div style="font-size: 15px; line-height: 1.8; color: #cccccc; max-width: 900px;">
-                <p style="margin-bottom: 20px;">
-                    eodo is an independent architectural and design practice operating across Istanbul and Paris, founded by Emre Eren Özaşık and Öykü Çimoğlu. The practice engages in architectural design, urban research, and multidisciplinary spatial productions, focusing on material assemblies, timber construction technologies, and the adaptive reuse of heritage structures.
-                </p>
-                <p>
-                    Approaching design through a rigorous contextual and conceptual framework, eodo balances local geographical narratives with contemporary urban demands.
-                </p>
-            </div>
+    <main class="about-main-container">
+        <!-- Giriş Yazısı -->
+        <div class="about-intro-block">
+            <p style="margin-bottom: 20px;">
+                eodo is an independent architectural and design practice operating across Istanbul and Paris, founded by Emre Eren Özaşık and Öykü Çimoğlu. The practice engages in architectural design, urban research, and multidisciplinary spatial productions, focusing on material assemblies, timber construction technologies, and the adaptive reuse of heritage structures.
+            </p>
+            <p>
+                Approaching design through a rigorous contextual and conceptual framework, eodo balances local geographical narratives with contemporary urban demands.
+            </p>
         </div>
 
-        <div class="founders-container">
+        <!-- Kurucular Grid (Yan Yana) -->
+        <div class="founders-grid">
             <!-- Emre Eren Özaşık -->
             <div class="founder-card">
-                <div class="img-wrapper" style="aspect-ratio: 4 / 5; margin-bottom: 20px; background-color: #111;">
-                    <img src="emre.jpg" alt="Emre Eren Özaşık" style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) brightness(0.9);">
+                <div class="img-box">
+                    <img src="emre.jpg" alt="Emre Eren Özaşık">
                 </div>
-                <h3 style="font-size: 16px; font-weight: bold; margin-bottom: 4px;">Emre Eren Özaşık</h3>
-                <p style="font-size: 12px; opacity: 0.6; margin-bottom: 20px;">// Co-Founder, Istanbul</p>
-                <p style="font-size: 13px; line-height: 1.8; color: #cccccc;">
+                <h3 class="founder-name">Emre Eren Özaşık</h3>
+                <p class="founder-title">// Co-Founder, Istanbul</p>
+                <p class="founder-bio">
                     He graduated from Yıldız Technical University with a degree in Architecture. He views spatial practice as an exploration driven by context, material, and spatial experience. His approach is shaped by an ongoing inquiry into how space interacts with its users and environment. Throughout his academic and professional practice, he has collaborated within multidisciplinary teams on national and international architectural competitions, earning various recognitions. He continues to engage in diverse project environments that encourage collaborative thinking. This emphasis on collective production remains a core element of his design methodology. His work focuses on solutions rooted in their local geography, creating sustainable spaces defined by a strong sense of belonging.
                 </p>
             </div>
 
             <!-- Zehra Öykü Çimoğlu -->
             <div class="founder-card">
-                <div class="img-wrapper" style="aspect-ratio: 4 / 5; margin-bottom: 20px; background-color: #111;">
-                    <img src="oyku.jpg" alt="Zehra Öykü Çimoğlu" style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) brightness(0.9);">
+                <div class="img-box">
+                    <img src="oyku.jpg" alt="Zehra Öykü Çimoğlu">
                 </div>
-                <h3 style="font-size: 16px; font-weight: bold; margin-bottom: 4px;">Zehra Öykü Çimoğlu</h3>
-                <p style="font-size: 12px; opacity: 0.6; margin-bottom: 20px;">// Co-Founder, Paris</p>
-                <p style="font-size: 13px; line-height: 1.8; color: #cccccc;">
+                <h3 class="founder-name">Zehra Öykü Çimoğlu</h3>
+                <p class="founder-title">// Co-Founder, Paris</p>
+                <p class="founder-bio">
                     She graduated from Kadir Has University with a degree in Architecture and pursued her master's studies at École nationale supérieure d'architecture de Paris-La Villette. She views spatial practice as an exploration driven by context, material, and spatial experience. Throughout her academic and professional practice, she has collaborated with various architectural firms based in Turkey and France, contributing to diverse design projects and competitions. This emphasis on collective production remains a core element of her design methodology. Her work focuses on solutions rooted in their local geography, creating sustainable spaces defined by a strong sense of belonging.
                 </p>
             </div>
         </div>
 
+        <!-- Collaborations -->
         <div style="margin-top: 100px; border-top: 1px solid #222222; padding-top: 50px;">
             <h3 style="font-size: 13px; text-transform: uppercase; letter-spacing: 2px; color: #888888; margin-bottom: 20px;">Our Collaborations</h3>
             <p style="font-size: 13px; color: #cccccc; line-height: 1.8;">
@@ -79,7 +137,8 @@
             </p>
         </div>
 
-        <div style="margin-top: 60px; border-top: 1px solid #222222; padding-top: 50px;">
+        <!-- Awards -->
+        <div style="margin-top: 60px; border-top: 1px solid #222222; padding-top: 50px; margin-bottom: 60px;">
             <h3 style="font-size: 13px; text-transform: uppercase; letter-spacing: 2px; color: #888888; margin-bottom: 20px;">Awards</h3>
             <div style="display: flex; flex-direction: column; gap: 12px; font-size: 13px; color: #cccccc;">
                 <div><strong style="color: #ffffff; font-weight: 500;">2025</strong> — 1st Prize, Bursa Setbaşı-Yeşil-Emirsultan Historical Axis Urban Design Competition (with BARK ARCHITECTS)</div>
