@@ -5,24 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eodo — Architecture, Design, Research, Urbanism</title>
     <meta name="description" content="eodo is an independent architectural and design practice based in Istanbul and Paris, founded by Emre Eren Özaşık and Öykü Çimoğlu.">
-    <meta name="keywords" content="eodo, eodoworks, eodo works, mimarlık pratiği, architecture practice, istanbul, paris, emre eren özaşık, öykü çimoğlu">
-    
-    <meta property="og:title" content="eodo — Architecture & Design Practice">
-    <meta property="og:description" content="Independent architectural and design practice operating across Istanbul and Paris.">
-    <meta property="og:url" content="https://eodoworks.com/">
-    <meta property="og:type" content="website">
-
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Anasayfa için özel akış ve kaydırma mimarisi */
+        /* Anasayfa akış mimarisi */
         body.home-page {
-            height: 150vh; /* Sayfanın aşağı kaydırılabilir olmasını sağlar */
+            height: auto;
+            min-height: 100vh;
             overflow-y: scroll;
             overflow-x: hidden;
             position: relative;
+            background-color: #000;
         }
 
-        /* Video arka planda tamamen sabit kalır */
+        /* Video arka planda tamamen sabit kalır, asla kaymaz */
         body.home-page .home-fullscreen-video-bg {
             position: fixed;
             top: 0;
@@ -66,11 +61,15 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        /* Footer sayfanın en altında (150vh'in dibinde) konumlanır, aşağı kaydırınca görünür */
+        /* İlk ekran boşluğu: Video tam ekran görünür */
+        .home-hero-spacer {
+            height: 100vh;
+            width: 100%;
+        }
+
+        /* Footer videonun hemen altında normal akışta yer alır, aşağı kaydırınca görünür */
         body.home-page footer.home-footer {
-            position: absolute;
-            bottom: 0;
-            left: 0;
+            position: relative;
             width: 100%;
             background-color: #000000 !important;
             color: #ffffff !important;
@@ -80,20 +79,14 @@
     </style>
 </head>
 <script>
-    // Sağ tık ve sürükleme koruması
-    document.addEventListener('contextmenu', function(e) {
-        e.preventDefault();
-    });
-
+    document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
     document.addEventListener('dragstart', function(e) {
-        if (e.target.nodeName === 'IMG' || e.target.nodeName === 'VIDEO') {
-            e.preventDefault();
-        }
+        if (e.target.nodeName === 'IMG' || e.target.nodeName === 'VIDEO') { e.preventDefault(); }
     });
 </script>
 <body class="home-page">
 
-    <!-- Arka Planda Sabit Tam Ekran Video -->
+    <!-- Arka Planda Sabit Video -->
     <div class="home-fullscreen-video-bg">
         <video autoplay muted loop playsinline>
             <source src="eodo-bg.mp4" type="video/mp4">
@@ -101,7 +94,7 @@
     </div>
     <div class="home-video-overlay"></div>
 
-    <!-- Giriş Animasyonlu Logo -->
+    <!-- Giriş Logosu -->
     <div class="intro-logo-overlay">
         <img src="logo-white.png" alt="eodo">
     </div>
@@ -118,11 +111,10 @@
         </nav>
     </header>
 
-    <main style="height: 100vh;">
-        <!-- İlk ekranda boşluk -->
-    </main>
+    <!-- İlk Ekran Boyutu Kadar Boşluk -->
+    <div class="home-hero-spacer"></div>
 
-    <!-- Aşağı Kaydırınca Görünen Siyah Footer Şeridi -->
+    <!-- Siyah Footer (Aşağı Kaydırınca Videonun Üzerinden Gelir) -->
     <footer class="home-footer">
         <div class="footer-logo">
             <img src="logo-white.png" alt="eodo">
