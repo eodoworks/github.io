@@ -1,59 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>eodo — Architecture, Design, Research, Urbanism</title>
-    <meta name="description" content="eodo is an independent architectural and design practice based in Istanbul and Paris, founded by Emre Eren Özaşık and Öykü Çimoğlu.">
-    <meta name="keywords" content="eodo, eodoworks, eodo works, mimarlık pratiği, architecture practice, istanbul, paris, emre eren özaşık, öykü çimoğlu">
-    
-    <meta property="og:title" content="eodo — Architecture & Design Practice">
-    <meta property="og:description" content="Independent architectural and design practice operating across Istanbul and Paris.">
-    <meta property="og:url" content="https://eodoworks.com/">
-    <meta property="og:type" content="website">
-
-    <link rel="stylesheet" href="style.css">
-</head>
-    <script>
-    // Sağ tık menüsünü engelleme
-    document.addEventListener('contextmenu', function(e) {
-        e.preventDefault();
-    });
-
-    // Klavye üzerinden görsel sürükleme veya kaydetme kısayollarını (Ctrl+S vb. değil ama sürüklemeyi) engelleme
-    document.addEventListener('dragstart', function(e) {
-        if (e.target.nodeName === 'IMG' || e.target.nodeName === 'VIDEO') {
-            e.preventDefault();
-        }
-    });
-</script>
-<body class="home-page">
-
-    <!-- Arka Planda Tam Ekran Sessiz, Siyah-Beyaz ve Blurlu Video -->
-    <div class="home-fullscreen-video-bg">
-        <video autoplay muted loop playsinline>
-            <source src="eodo-bg.mp4" type="video/mp4">
-        </video>
-    </div>
-    <div class="home-video-overlay"></div>
-
-    <header>
-        <a href="index.html" class="nav-logo">
-            <img src="logo-white.png" alt="eodo">
-        </a>
-        <nav>
-            <a href="index.html" class="active">Home</a>
-            <a href="works.html">Works</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
-
-    <main>
-        <!-- Mor işaretlediğin tüm alan tamamen video arka planı oldu, ortada logo yok -->
-    </main>
-
-    <footer class="home-footer">
+<footer class="home-footer">
         <div class="footer-logo">
             <img src="logo-white.png" alt="eodo">
         </div>
@@ -68,6 +13,3 @@
             <a href="mailto:info@eodoworks.com">info@eodoworks.com</a>
         </div>
     </footer>
-
-</body>
-</html>
