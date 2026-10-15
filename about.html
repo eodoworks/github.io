@@ -44,7 +44,7 @@
     </header>
 
     <main>
-        <!-- Üst Bölüm (İlk Ekran - Sadece Yatay Logo ve Manifest): min-height: 100vh ile ilk ekranı doldurur -->
+        <!-- Üst Bölüm (İlk Ekran - Sadece Yatay Logo ve Manifest) -->
         <section class="bg-white" style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 60px 10%; border-bottom: 1px solid #e0e0e0;">
             <div class="about-intro-container" style="display: flex; gap: 60px; align-items: center;">
                 <div style="width: 35%;">
@@ -56,8 +56,8 @@
             </div>
         </section>
 
-        <!-- Orta Bölüm (Beyaz Arka Plan - Kurucular) -->
-        <section class="bg-white" style="padding: 90px 10%; border-bottom: 1px solid #e0e0e0;">
+        <!-- Orta Bölüm (Beyaz Arka Plan - Kurucular) -> Efektli -->
+        <section class="bg-white scroll-reveal" style="padding: 90px 10%; border-bottom: 1px solid #e0e0e0;">
             <div class="founders-container" style="display: flex; gap: 80px;">
                 <!-- Emre Eren Özaşık -->
                 <div class="founder-card" style="flex: 1;">
@@ -75,14 +75,14 @@
                     <h3 style="font-size: 22px; font-weight: bold; margin-bottom: 6px; color: #000000;">Zehra Öykü Çimoğlu</h3>
                     <p style="font-size: 13px; color: #666666; margin-bottom: 20px;">// Co-Founder, Paris</p>
                     <p style="font-size: 13px; line-height: 1.7; color: #333333;">
-                        She graduated from Kadir Has University with a degree in Architecture and pursued her master's studies at École nationale supérieure d'architecture de Paris-La Villette. She views spatial practice as an exploration driven by context, material, and spatial experience. Throughout her academic and professional practice, she has collaborated with various architectural firms based in Turkey and France, contributing to diverse design projects and competitions. This emphasis on collective production remains a core element of her design methodology. Her work focuses on solutions rooted in their local geography, creating sustainable spaces defined by a strong sense of belonging.
+                        She graduated from Kadir Has University with a degree in Architecture and pursued her master's studies at École nationale supérieure d'architecture de Paris-La Villette. She views spatial practice as an exploration driven by context, material, and spatial experience. Throughout her academic and professional practice, she has collaborated with various architectural firms based in Turkey and France, contributing to diverse design projects and competitions. This emphasis on collective production remains a core element of her design methodology. His work focuses on solutions rooted in their local geography, creating sustainable spaces defined by a strong sense of belonging.
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- Alt Bölüm (Siyah Arka Plan - Our Collaborations & Awards) -->
-        <section class="bg-black" style="padding: 90px 10%;">
+        <!-- Alt Bölüm (Siyah Arka Plan - Our Collaborations & Awards) -> Efektli -->
+        <section class="bg-black scroll-reveal" style="padding: 90px 10%;">
             <div style="margin-bottom: 70px;">
                 <h3 style="font-size: 20px; font-weight: bold; margin-bottom: 20px; color: #ffffff;">Our Collaborations</h3>
                 <p style="font-size: 13px; opacity: 0.85; font-style: italic; letter-spacing: 0.3px; color: #cccccc;">
@@ -118,6 +118,30 @@
             <a href="mailto:info@eodoworks.com">info@eodoworks.com</a>
         </div>
     </footer>
+
+    <!-- Scroll Animasyon Scripti -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.scroll-reveal').forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
 
 </body>
 </html>
